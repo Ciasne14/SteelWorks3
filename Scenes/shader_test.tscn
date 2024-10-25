@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjd6n0thchu0l"]
+
+[ext_resource type="Texture2D" uid="uid://c36tfkvj35su3" path="res://Images/Cat500.png" id="1_a7jm2"]
+[ext_resource type="Shader" path="res://MaterialShaders/vhsshader.gdshader" id="1_ikohx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1c41t"]
+shader = ExtResource("1_ikohx")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[node name="Node2D" type="Node2D"]
+material = SubResource("ShaderMaterial_1c41t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(554, 310)
+texture = ExtResource("1_a7jm2")

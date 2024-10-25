@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0j1nw2u0fv5b"]
 
-[ext_resource type="Script" path="res://replace_wallpaper.gd" id="1_3bpkk"]
+[ext_resource type="Script" path="res://Scripts/replace_wallpaper.gd" id="1_3bpkk"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

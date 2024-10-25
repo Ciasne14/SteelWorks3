@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://gu6wpty15hva"]
+
+[ext_resource type="Shader" path="res://MaterialShaders/vhsshader.gdshader" id="1_glx15"]
+
+[resource]
+shader = ExtResource("1_glx15")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
