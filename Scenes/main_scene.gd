@@ -1,7 +1,4 @@
 extends TextureRect
-# Path to the local image file
-var local_path = "C:\\Users\\pawel\\Desktop\\copied_wallpaper.png"
-
 
 func _ready():
 	use_copied_wallpaper(get_current_wallpaper())
@@ -35,27 +32,6 @@ func get_current_wallpaper() -> String:
 	FileAccess.open(temp_file, FileAccess.WRITE).store_string("")  # Clear the temp file
 
 	return path
-
-#func copy_current_wallpaper():
-	#var wallpaper_path = get_current_wallpaper()
-	#if wallpaper_path != "":
-		#var user_data_path = OS.get_user_data_dir() + "/copied_wallpaper.jpg"  # Change extension if needed
-		#
-		## Copy the wallpaper to the user data directory
-		#var command = "cmd.exe"
-		#var args = ["/C", "copy", wallpaper_path, user_data_path.replace("/","\\")]
-		#var result = OS.execute(command, args)
-		#
-		#if result != OK:
-			#print("Failed to copy wallpaper.")
-			#return
-#
-		#print("Wallpaper copied to: ", user_data_path)
-		##use_wallpaper(user_data_path)
-		## Load the copied wallpaper as a texture
-		#use_copied_wallpaper(user_data_path)
-	#else:
-		#print("Failed to get current wallpaper path.")
 		
 func use_copied_wallpaper(local_path):
 	var image = Image.new()
