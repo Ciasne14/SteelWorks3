@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=10 format=3 uid="uid://bomcccbex7omi"]
 
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
@@ -9,13 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
 [ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
 
-[node name="Control" type="Control"]
+[node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d111u")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -166,6 +168,9 @@ grow_vertical = 0
 script = ExtResource("8_kk6e8")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="DemonCommunicator"]
+unique_name_in_owner = true
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="DemonCommunicator"]
 unique_name_in_owner = true
 
 [node name="ApiTimer" type="Timer" parent="DemonCommunicator"]

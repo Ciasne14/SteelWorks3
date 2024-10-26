@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b21ay0s48gftm"]
+
+[ext_resource type="Script" path="res://escaper.gd" id="1_8toob"]
+[ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="2_wbo6i"]
+
+[node name="Escaper" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(617, 358)
+texture = ExtResource("2_wbo6i")
+script = ExtResource("1_8toob")

@@ -27,6 +27,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		var match = regex.search(response)
 		if match:
 			var response_value = match.get_string(1)
+			if(response_value == "sudo"):
+				get_tree().quit()
 			%DemonCommunicator.text=response_value
 			print(response_value)  # Output: "chyba dziala"
 		else:
