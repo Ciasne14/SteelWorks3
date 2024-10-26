@@ -1,14 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=13 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
 [ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
+[ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://PressStart2P-Regular.ttf" id="5_d1qnp"]
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
 [ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
+[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
+
+[sub_resource type="Theme" id="Theme_6lw6g"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 25
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -60,8 +66,16 @@ offset_bottom = 0.154022
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Credits" type="RichTextLabel" parent="Background/MainScene/CenterContainer"]
 visible = false
+layout_mode = 2
+theme = SubResource("Theme_6lw6g")
+text = "fghfdhfdh
+hchgchc"
+fit_content = true
+autowrap_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -190,6 +204,10 @@ unique_name_in_owner = true
 [node name="ApiTimer" type="Timer" parent="DemonCommunicator"]
 unique_name_in_owner = true
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xufgv")
+volume_db = -15.0
 
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
