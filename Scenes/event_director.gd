@@ -15,7 +15,12 @@ func start_random_event():
 	var event_index = randi() % events.size()
 	var selected_event = events[event_index]
 	selected_event.call()  # Wywołaj wylosowany event za pomocą `call`
-
+	
+func volume_down():
+	$"../VolDown".pressed
+func volume_up():
+	$"../VolUp".pressed
+	
 # Funkcja odpowiedzialna za uruchomienie obrotu z losową prędkością i czasem
 func start_random_rotation():
 	# Losowanie prędkości obrotu (prędkość może być dodatnia lub ujemna)

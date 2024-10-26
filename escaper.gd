@@ -13,7 +13,8 @@ func _ready():
 func _process(delta):
 	if(chase):
 		if is_mouse_over():
-			$AudioStreamPlayer.play()
+			null
+			#$AudioStreamPlayer.play()
 		else:
 			print("Mouse is not over the sprite.")
 		var vec = get_viewport().get_mouse_position() - self.position # getting the vector from self to the mouse
