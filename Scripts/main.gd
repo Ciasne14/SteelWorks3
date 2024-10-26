@@ -110,4 +110,5 @@ func _on_q_4_pressed() -> void:
 func handle_solved():
 	solved = solved +  1
 	if(solved == 4):
+		$CanvasLayer2/Info.text = "Twoja dusza jest wolna, ale nie od gulaszu"
 		$Stop.disabled=false

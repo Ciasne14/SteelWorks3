@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b21ay0s48gftm"]
 
-[ext_resource type="Script" path="res://escaper.gd" id="1_8toob"]
+[ext_resource type="Script" path="res://Scripts/escaper.gd" id="1_8toob"]
 [ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="2_wbo6i"]
-[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="3_h8sll"]
+[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://Sounds/click[0-0-2](1).mp3" id="3_h8sll"]
 
 [node name="Escaper" type="Node2D"]
 

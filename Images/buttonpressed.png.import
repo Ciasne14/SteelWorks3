@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c72xicxiwdu7x"
-path="res://.godot/imported/scary.png-b75a94d6c3656bdd36aa6a6eb052976c.ctex"
+uid="uid://d2lyoodc00bvc"
+path="res://.godot/imported/buttonpressed.png-48a561c40e2385c2439f0e2fc6b933d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/scary.png"
-dest_files=["res://.godot/imported/scary.png-b75a94d6c3656bdd36aa6a6eb052976c.ctex"]
+source_file="res://Images/buttonpressed.png"
+dest_files=["res://.godot/imported/buttonpressed.png-48a561c40e2385c2439f0e2fc6b933d4.ctex"]
 
 [params]
 

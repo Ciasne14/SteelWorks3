@@ -45,7 +45,7 @@ func is_mouse_over() -> bool:
 func _on_timer_timeout() -> void:
 	if(!done):
 		chase = false
-		var textureNew = load("res://Scenes/afraid.png")
+		var textureNew = load("res://Images/afraid.png")
 		$".".texture = textureNew
 		$"../CanvasLayer2/Info".text = "Zlap mnie!"
 
