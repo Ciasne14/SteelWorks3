@@ -4,8 +4,6 @@ var bus_name: String
 var bus_index: int
 
 func _ready():
-	bus_index = AudioServer.get_bus_index(bus_name)
-	#value_changed.connect(_on_value_changed)
 	use_copied_wallpaper(get_current_wallpaper())
 	print(get_current_wallpaper())
 	
