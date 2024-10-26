@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=16 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -12,7 +12,8 @@
 [ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
 [ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
-[ext_resource type="PackedScene" uid="uid://b21ay0s48gftm" path="res://escaper.tscn" id="13_fklnf"]
+[ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
+[ext_resource type="Script" path="res://escaper.gd" id="14_n5ll0"]
 
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
@@ -337,8 +338,44 @@ grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("12_a0ylw")
 
-[node name="Escaper" parent="." instance=ExtResource("13_fklnf")]
+[node name="Escaper" type="Sprite2D" parent="."]
 visible = false
+texture = ExtResource("13_7c2l2")
+script = ExtResource("14_n5ll0")
+
+[node name="Button" type="Button" parent="Escaper"]
+anchors_preset = -1
+anchor_top = -0.016
+anchor_right = 0.984
+anchor_bottom = 0.984
+offset_left = -63.0
+offset_top = -63.952
+offset_right = -63.952
+offset_bottom = -63.952
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Escaper"]
+wait_time = 5.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Escaper"]
+stream = ExtResource("10_xufgv")
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.096
+anchor_right = 0.481
+anchor_bottom = 0.164
+offset_left = 0.223969
+offset_top = -0.208
+offset_right = -0.112061
+offset_bottom = -0.272003
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
@@ -358,3 +395,5 @@ visible = false
 [connection signal="mouse_exited" from="Q2" to="." method="_on_q_2_mouse_exited"]
 [connection signal="mouse_entered" from="Q4" to="." method="_on_q_4_mouse_entered"]
 [connection signal="mouse_exited" from="Q4" to="." method="_on_q_4_mouse_exited"]
+[connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
+[connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]

@@ -3,7 +3,7 @@ extends  Sprite2D
 const chaseSPEED = 500
 var escapeSPEED = 2000.0
 # The margin to keep the sprite inside the screen
-var margin: float = 10.0
+var margin: float = 1.0
 var chase = true
 @export var button1: Button
 	
@@ -43,6 +43,7 @@ func is_mouse_over() -> bool:
 
 func _on_timer_timeout() -> void:
 	chase = false
+	$"../Info".text = "Zlap mnie!"
 	print("Boolean changed to: ", chase)
 
 signal health_changed(new_value)
@@ -51,5 +52,16 @@ func clicked():
 	emit_signal("monsterCatched")
 	
 func _on_button_pressed() -> void:
-	var test = get_node("../Q1")
-	test.modulate = Color(0,0,0)
+	if(!chase):
+		$"../Q1".disabled = false
+		$"../Q3".disabled = false
+		$"../Q2".disabled = false
+		$"../Q4".disabled = false
+		$"../Stop".disabled = false
+		$"../Button".disabled = false
+		$"../Button2".disabled = false
+		$"../Button3".disabled = false
+		$".".visible = false
+		$"../Q1".modulate = Color(0,1,0)
+		$"../Q1".mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$"../Info".text = ""
