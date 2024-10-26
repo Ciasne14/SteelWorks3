@@ -1,6 +1,6 @@
 extends TextureRect
 
-var question_1: Array = ["Jak nazywa się główna antagonistka w filmie \"Ring\"","Tamara"]
+var question_1: Array = ["Jak nazywa się główna antagonistka w filmie \"Ring\"","Samara"]
 var question_2: Array = ["W którym roku powstał film \"Noc żywych trupów\"","1968"]
 var question_3: Array = ["Jak nazywa się najlepsiejszy silnik do tworzenia gier (zaczyna się na G, a kończy ODOT)","Godot"]
 

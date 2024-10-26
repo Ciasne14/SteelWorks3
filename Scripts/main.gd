@@ -12,7 +12,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			if event.keycode == Key.KEY_ALT:
-				print("Alt key is blocked.")
+				$althandler.visible = true
 				return  # Ignore the Alt key press
 
 func _on_q_1_mouse_entered() -> void:
@@ -48,6 +48,10 @@ func _on_q_4_mouse_exited() -> void:
 		$Q4.modulate = Color(255,255,255)
 
 func _on_q_1_pressed() -> void:
+	$Q1.visible=false
+	$Q2.visible=false
+	$Q3.visible=false
+	$Q4.visible=false
 	$CanvasLayer2/Info.text = "Uciekaj!"
 	var escaper =$Escaper
 	escaper.activated = true
@@ -67,11 +71,6 @@ func _on_q_2_pressed() -> void:
 
 func disable_enable_buttons(disableOrEnable):
 	buttons_are_enabled = disableOrEnable
-	$Play.disabled = disableOrEnable
-	$VolDown.disabled = disableOrEnable 
-	$VolUp.disabled = disableOrEnable 
-	$Credits.disabled = disableOrEnable
-	$Stop.disabled = disableOrEnable
 	$Button.disabled = disableOrEnable
 	$Button2.disabled = disableOrEnable
 	$Button3.disabled = disableOrEnable
@@ -99,7 +98,6 @@ func _create_popup():
 	#popup_instance.popup_centered()  # Show the popup in the center of the screen
 	pass
 
-
 func _on_q_4_pressed() -> void:
 	$CanvasLayer2/Info.text = "Wyeliminuj klocki od najwyższej wartości"
 	$Q1.visible=false
@@ -112,6 +110,7 @@ func handle_solved():
 	solved = solved +  1
 	$"Event Director".haunt += 1
 	if(solved == 4):
+		$CanvasLayer2/Info.text = "Twoja dusza jest wolna, ale nie od gulaszu"
 		$Stop.disabled=false
 		$"Event Director/EventTimer".stop()
 		

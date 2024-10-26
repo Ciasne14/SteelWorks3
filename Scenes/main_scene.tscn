@@ -1,28 +1,29 @@
-[gd_scene load_steps=30 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=32 format=3 uid="uid://bomcccbex7omi"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
-[ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
+[ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://c8u0u8gxitlm1" path="res://Images/Backgound.png" id="3_3l3p7"]
-[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="3_fj4oy"]
 [ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
-[ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://PressStart2P-Regular.ttf" id="5_d1qnp"]
-[ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
-[ext_resource type="Texture2D" uid="uid://xlpti0rpqwl" path="res://nosignal.png" id="6_1u7kc"]
-[ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
-[ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
-[ext_resource type="Script" path="res://Scenes/quest_2.gd" id="7_axq51"]
-[ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
-[ext_resource type="Script" path="res://Scenes/quest_3.gd" id="8_r3kv3"]
-[ext_resource type="Script" path="res://Scenes/quest_4.gd" id="9_r8gnw"]
-[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
+[ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://MaterialShaders/PressStart2P-Regular.ttf" id="5_d1qnp"]
+[ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://Images/button.png" id="5_oexas"]
+[ext_resource type="Texture2D" uid="uid://xlpti0rpqwl" path="res://Images/nosignal.png" id="6_1u7kc"]
+[ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://Images/buttonpressed.png" id="6_ak2rn"]
+[ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://Images/buttonhovered.png" id="7_75aa8"]
+[ext_resource type="Script" path="res://Scripts/quest_2.gd" id="7_axq51"]
+[ext_resource type="Script" path="res://Scripts/demon_communicator.gd" id="8_kk6e8"]
+[ext_resource type="Script" path="res://Scripts/quest_3.gd" id="8_r3kv3"]
+[ext_resource type="Script" path="res://Scripts/quest_4.gd" id="9_r8gnw"]
+[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://Sounds/click[0-0-2](1).mp3" id="10_xufgv"]
 [ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
-[ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
-[ext_resource type="Script" path="res://Scenes/event_director.gd" id="13_kr52a"]
-[ext_resource type="Script" path="res://Scenes/stop.gd" id="14_4rpgv"]
-[ext_resource type="Script" path="res://escaper.gd" id="14_n5ll0"]
-[ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Scenes/scream.mp3" id="20_lo6q1"]
-[ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Images/start_click.mp3" id="20_mvfre"]
-[ext_resource type="Script" path="res://Scenes/background_sound.gd" id="21_m6fvp"]
+[ext_resource type="Script" path="res://Scripts/event_director.gd" id="13_kr52a"]
+[ext_resource type="Script" path="res://Scripts/stop.gd" id="14_4rpgv"]
+[ext_resource type="Script" path="res://Scripts/escaper.gd" id="14_n5ll0"]
+[ext_resource type="Texture2D" uid="uid://c72xicxiwdu7x" path="res://Images/scary.png" id="19_jt61n"]
+[ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Sounds/scream.mp3" id="20_lo6q1"]
+[ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Sounds/start_click.mp3" id="20_mvfre"]
+[ext_resource type="Script" path="res://Scripts/background_sound.gd" id="21_m6fvp"]
+[ext_resource type="Script" path="res://Scripts/althandler.gd" id="24_1au4v"]
 
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
@@ -50,6 +51,9 @@ default_font_size = 16
 [sub_resource type="Theme" id="Theme_rbmuq"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_lcgcb"]
+default_font = ExtResource("5_d1qnp")
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -489,6 +493,7 @@ offset_right = -0.248047
 offset_bottom = 0.143982
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
@@ -629,18 +634,19 @@ icon = ExtResource("12_a0ylw")
 
 [node name="Escaper" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("13_7c2l2")
+texture = ExtResource("19_jt61n")
 script = ExtResource("14_n5ll0")
 
 [node name="Button" type="Button" parent="Escaper"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_top = -0.016
 anchor_right = 0.984
 anchor_bottom = 0.984
-offset_left = -63.0
-offset_top = -63.952
-offset_right = -63.952
-offset_bottom = -63.952
+offset_left = -49.0
+offset_top = -50.4
+offset_right = -49.952
+offset_bottom = -50.4
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Escaper"]
@@ -680,7 +686,6 @@ offset_bottom = 0.0879822
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_3pmot")
-text = "test14313423rsdfdsgfsgsdgf"
 script = ExtResource("8_kk6e8")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer2/DemonCommunicator"]
@@ -705,10 +710,29 @@ offset_right = -0.312012
 offset_bottom = -0.248001
 grow_horizontal = 2
 theme = SubResource("Theme_rbmuq")
+text = "Rozwiąż zagadki i aktywuj STOP"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
+
+[node name="althandler" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.264
+anchor_right = 0.55
+anchor_bottom = 0.443
+offset_top = -0.0720062
+offset_right = 0.399963
+offset_bottom = -0.0640259
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lcgcb")
+text = "Prosimy nie regulowac odbiorników i nie alt-tabować"
+autowrap_mode = 2
+script = ExtResource("24_1au4v")
 
 [connection signal="pressed" from="Background/Quest2/Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Background/Quest2/Blue" to="Background/Quest2" method="_on_blue_pressed"]
@@ -748,3 +772,5 @@ uppercase = true
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
+[connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]

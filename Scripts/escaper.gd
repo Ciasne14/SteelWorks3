@@ -45,6 +45,8 @@ func is_mouse_over() -> bool:
 func _on_timer_timeout() -> void:
 	if(!done):
 		chase = false
+		var textureNew = load("res://Images/afraid.png")
+		$".".texture = textureNew
 		$"../CanvasLayer2/Info".text = "Zlap mnie!"
 
 signal health_changed(new_value)
@@ -60,6 +62,10 @@ func _on_button_pressed() -> void:
 		$"../Q3".disabled = false
 		$"../Q2".disabled = false
 		$"../Q4".disabled = false
+		$"../Q1".visible = true
+		$"../Q3".visible = true
+		$"../Q2".visible = true
+		$"../Q4".visible = true
 		$"../Button".disabled = false
 		$"../Button2".disabled = false
 		$"../Button3".disabled = false
