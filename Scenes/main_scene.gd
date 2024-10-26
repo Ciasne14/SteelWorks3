@@ -119,3 +119,13 @@ func _on_play_pressed() -> void:
 	$"../../Stop".disabled=true
 	use_copied_wallpaper(get_current_wallpaper())
 	print(get_current_wallpaper())
+	$"../../Q1".modulate = Color(255,255,255)
+	$"../../Q2".modulate = Color(255,255,255)
+	$"../../Q3".modulate = Color(255,255,255)
+	$"../../Q4".modulate = Color(255,255,255)
+	$"../../Q1".visible = true
+	$"../../Q2".visible = true
+	$"../../Q3".visible = true
+	$"../../Q4".visible = true
+	
+	

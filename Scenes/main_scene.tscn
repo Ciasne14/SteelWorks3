@@ -272,6 +272,7 @@ stream = ExtResource("10_xufgv")
 volume_db = -15.0
 
 [node name="Q1" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.155
@@ -286,6 +287,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Q3" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.597
@@ -300,6 +302,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Q2" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.155
@@ -314,6 +317,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Q4" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.597
@@ -326,6 +330,8 @@ offset_right = 0.375916
 offset_bottom = 0.247986
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Node" type="Node" parent="."]
 
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
