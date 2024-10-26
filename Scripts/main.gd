@@ -98,7 +98,6 @@ func _create_popup():
 	#popup_instance.popup_centered()  # Show the popup in the center of the screen
 	pass
 
-
 func _on_q_4_pressed() -> void:
 	$CanvasLayer2/Info.text = "Wyeliminuj klocki od najwyższej wartości"
 	$Q1.visible=false
