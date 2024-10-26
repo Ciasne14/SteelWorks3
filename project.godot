@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://Images/ciasne14.png"
 config/icon="res://scenes/Intro/icon.svg"
-boot_splash/minimum_display_time=2500
+boot_splash/minimum_display_time=3500
 
 [display]
 
