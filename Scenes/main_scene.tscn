@@ -1,13 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bomcccbex7omi"]
-=======
-[gd_scene load_steps=11 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=10 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
-[ext_resource type="Texture2D" uid="uid://c8u0u8gxitlm1" path="res://Images/Backgound.png" id="3_3l3p7"]
+[ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
 [ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
-[ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://PressStart2P-Regular.ttf" id="5_d1qnp"]
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
@@ -46,31 +43,9 @@ offset_right = 0.471924
 offset_bottom = -0.240021
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_3l3p7")
+texture = ExtResource("2_2jry2")
 expand_mode = 1
 script = ExtResource("3_fj4oy")
-
-[node name="CenterContainer" type="CenterContainer" parent="Background/MainScene"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.003
-anchor_right = 1.003
-anchor_bottom = 0.994
-offset_left = -0.214
-offset_top = -4.0
-offset_right = -0.213867
-offset_bottom = 0.154022
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Credits" type="RichTextLabel" parent="Background/MainScene/CenterContainer"]
-visible = false
-layout_mode = 2
-theme = SubResource("Theme_6lw6g")
-text = "fghfdhfdh
-hchgchc"
-fit_content = true
-autowrap_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -153,7 +128,6 @@ offset_right = -0.272034
 offset_bottom = 0.143982
 grow_horizontal = 2
 grow_vertical = 2
-toggle_mode = true
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
@@ -203,81 +177,8 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 autostart = true
 
-[node name="Q1" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.163
-anchor_top = 0.176
-anchor_right = 0.23
-anchor_bottom = 0.299
-offset_left = 0.223999
-offset_top = -0.0480118
-offset_right = 0.0400085
-offset_bottom = 0.247986
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("10_8v12a")
-
-[node name="Q2" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.591
-anchor_top = 0.176
-anchor_right = 0.658
-anchor_bottom = 0.299
-offset_left = 0.167969
-offset_top = -0.0480118
-offset_right = -0.0160522
-offset_bottom = 0.247986
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("10_8v12a")
-
-[node name="Q3" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.163
-anchor_top = 0.423
-anchor_right = 0.23
-anchor_bottom = 0.546
-offset_left = 0.223999
-offset_top = -0.104004
-offset_right = 0.0400085
-offset_bottom = 0.191986
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("10_8v12a")
-
-[node name="Q4" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.591
-anchor_top = 0.423
-anchor_right = 0.658
-anchor_bottom = 0.546
-offset_left = 0.167969
-offset_top = -0.104004
-offset_right = -0.0160522
-offset_bottom = 0.191986
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("10_8v12a")
-
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
-[connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
 [connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
-[connection signal="mouse_entered" from="Q1" to="." method="_on_q_1_mouse_entered"]
-[connection signal="mouse_exited" from="Q1" to="." method="_on_q_1_mouse_exited"]
-[connection signal="mouse_entered" from="Q2" to="." method="_on_q_2_mouse_entered"]
-[connection signal="mouse_exited" from="Q2" to="." method="_on_q_2_mouse_exited"]
-[connection signal="mouse_entered" from="Q3" to="." method="_on_q_3_mouse_entered"]
-[connection signal="mouse_exited" from="Q3" to="." method="_on_q_3_mouse_exited"]
-[connection signal="mouse_entered" from="Q4" to="." method="_on_q_4_mouse_entered"]
-[connection signal="mouse_exited" from="Q4" to="." method="_on_q_4_mouse_exited"]

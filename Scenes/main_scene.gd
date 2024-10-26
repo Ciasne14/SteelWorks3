@@ -3,8 +3,6 @@ extends TextureRect
 var bus_name: String
 var bus_index: int
 
-func _ready():
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	
 func get_current_wallpaper() -> String:
 	var path = ""
@@ -72,7 +70,6 @@ func get_wallpaper_path(output: String) -> String:
 
 
 func _on_stop_pressed() -> void:
-	$"../../AudioStreamPlayer".play()
 	get_tree().quit()
 
 
@@ -91,33 +88,14 @@ func _on_vol_up_pressed() -> void:
 	current_volume = min(current_volume + volume_step, max_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zwiększona: ", current_volume)
-	$"../../AudioStreamPlayer".play()
 
 # Metoda zmniejszająca głośność
 func _on_vol_down_pressed() -> void:
 	current_volume = max(current_volume - volume_step, min_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zmniejszona: ", current_volume)
-	$"../../AudioStreamPlayer".play()
-
-
-func _on_credits_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		$CenterContainer/Credits.show()
-		$"../../AudioStreamPlayer".play()
-	else:
-		$CenterContainer/Credits.hide()
-		$"../../AudioStreamPlayer".play()
-
-
-func _on_button_pressed() -> void:
-	$"../../AudioStreamPlayer".play()
 
 
 func _on_play_pressed() -> void:
 	use_copied_wallpaper(get_current_wallpaper())
 	print(get_current_wallpaper())
-	$"../../Q1".visible = true
-	$"../../Q2".visible = true
-	$"../../Q3".visible = true
-	$"../../Q4".visible = true
