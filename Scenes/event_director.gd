@@ -6,8 +6,7 @@ var is_rotating: bool = false  # Kontrola obrotu
 var events = []
 
 func _ready() -> void:
-	# Inicjalizuj listę dostępnych eventów jako `Callable`
-	events = [start_random_rotation, stop_rotation]
+	events = [volume_down]
 	start_random_event()  # Rozpocznij losowy event po starcie
 
 # Funkcja losująca i uruchamiająca event
@@ -16,8 +15,14 @@ func start_random_event():
 	var selected_event = events[event_index]
 	selected_event.call()  # Wywołaj wylosowany event za pomocą `call`
 	
-func volume_down():
+func volume_down() -> void:
+	#$"../Background/MainScene".on_vol_down_pressed()
 	$"../VolDown".pressed
+	$"../VolDown/Timer".start()
+	await $"../VolDown/Timer".timeout
+	#$"../VolDown".texture_normal
+	start_random_event()
+		
 func volume_up():
 	$"../VolUp".pressed
 	
@@ -41,8 +46,8 @@ func _process(delta: float) -> void:
 # Funkcja zatrzymująca obrót (wywoływana po zakończeniu `SpinTimer`)
 func stop_rotation():
 	is_rotating = false  # Wyłączenie obrotu
-	var wait_time = randf_range(2.0, 5.0)
-	$EventTimer.start(wait_time)
+	var event_delay = randf_range(1,1)
+	$EventTimer.start(event_delay)
 	
 # Sygnał `timeout` z `SpinTimer`, zatrzymuje obrót po ustalonym czasie
 func _on_SpinTimer_timeout() -> void:

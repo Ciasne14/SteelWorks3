@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=20 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -21,6 +21,10 @@
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 22
+
+[sub_resource type="Theme" id="Theme_3pmot"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 16
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -172,6 +176,9 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
+[node name="Timer" type="Timer" parent="VolDown"]
+one_shot = true
+
 [node name="VolUp" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -189,6 +196,9 @@ texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
+
+[node name="Timer" type="Timer" parent="VolUp"]
+one_shot = true
 
 [node name="Credits" type="TextureButton" parent="."]
 layout_mode = 1
@@ -384,6 +394,7 @@ script = ExtResource("13_kr52a")
 [node name="SpinTimer" type="Timer" parent="Event Director"]
 
 [node name="EventTimer" type="Timer" parent="Event Director"]
+one_shot = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 2
@@ -404,6 +415,7 @@ offset_right = -0.0960693
 offset_bottom = 0.0879822
 grow_horizontal = 0
 grow_vertical = 0
+theme = SubResource("Theme_3pmot")
 text = "test14313423rsdfdsgfsgsdgf"
 script = ExtResource("8_kk6e8")
 
