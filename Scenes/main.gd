@@ -53,16 +53,6 @@ func _on_q_1_pressed() -> void:
 	$Escaper.visible=true
 	disable_enable_buttons(true)
 
-func _on_q_2_pressed() -> void:
-	$Q1.visible=false
-	$Q2.visible=false
-	$Q3.visible=false
-	$Q4.visible=false
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	$Info.text = "Nacisnij niebieskie pole - to po prawej"
-	$Background/MainScene.visible = false
-	$Background/Quest2.visible = true
-
 func disable_enable_buttons(disableOrEnable):
 	buttons_are_enabled = disableOrEnable
 	$Play.disabled = disableOrEnable
