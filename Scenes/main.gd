@@ -61,7 +61,7 @@ func _on_q_2_pressed() -> void:
 	$Q3.visible=false
 	$Q4.visible=false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	$Info.text = "Nacisnij niebieskie pole - to po prawej"
+	$CanvasLayer2/Info.text = "Nacisnij niebieskie pole - to po prawej"
 	$Background/MainScene.visible = false
 	$Background/Quest2.visible = true
 

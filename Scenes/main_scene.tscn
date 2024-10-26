@@ -24,6 +24,10 @@
 default_font = ExtResource("5_d1qnp")
 default_font_size = 22
 
+[sub_resource type="Theme" id="Theme_3pmot"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 16
+
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -77,12 +81,17 @@ grow_vertical = 2
 
 [node name="Credits" type="RichTextLabel" parent="Background/MainScene/CenterContainer"]
 visible = false
+z_index = 4
 layout_mode = 2
+size_flags_vertical = 4
 theme = SubResource("Theme_6lw6g")
 bbcode_enabled = true
 text = "[center]Rafał \"Bafau\" Bazan
+
 Mateusz \"Azghal\" Olszewski
+
 Paweł \"godwin91ek\" Tokarczyk
+
 Mateusz \"Gamequad\" Woźniak"
 fit_content = true
 autowrap_mode = 0
@@ -96,10 +105,10 @@ anchor_left = 0.074
 anchor_top = 0.076
 anchor_right = 0.714
 anchor_bottom = 0.63
-offset_left = -0.248001
-offset_top = -0.248005
+offset_left = -0.248009
+offset_top = -0.248009
 offset_right = 0.471924
-offset_bottom = -0.240021
+offset_bottom = -0.23999
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_1u7kc")
@@ -387,6 +396,9 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
+[node name="Timer" type="Timer" parent="VolDown"]
+one_shot = true
+
 [node name="VolUp" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -404,6 +416,9 @@ texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
+
+[node name="Timer" type="Timer" parent="VolUp"]
+one_shot = true
 
 [node name="Credits" type="TextureButton" parent="."]
 layout_mode = 1
@@ -501,32 +516,6 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
-[node name="DemonCommunicator" type="RichTextLabel" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.78
-anchor_top = 0.355
-anchor_right = 0.955
-anchor_bottom = 0.603
-offset_left = 0.439941
-offset_top = -0.0400085
-offset_right = -0.160034
-offset_bottom = 0.255981
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("8_kk6e8")
-
-[node name="HTTPRequest" type="HTTPRequest" parent="DemonCommunicator"]
-unique_name_in_owner = true
-
-[node name="HTTPRequest2" type="HTTPRequest" parent="DemonCommunicator"]
-unique_name_in_owner = true
-
-[node name="ApiTimer" type="Timer" parent="DemonCommunicator"]
-unique_name_in_owner = true
-autostart = true
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_xufgv")
 volume_db = -15.0
@@ -595,22 +584,6 @@ grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("12_a0ylw")
 
-[node name="Info" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.288
-anchor_top = 0.096
-anchor_right = 0.481
-anchor_bottom = 0.164
-offset_left = 0.223969
-offset_top = -0.208
-offset_right = -0.112061
-offset_bottom = -0.272003
-grow_horizontal = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
 [node name="Escaper" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("13_7c2l2")
@@ -642,6 +615,55 @@ script = ExtResource("13_kr52a")
 [node name="SpinTimer" type="Timer" parent="Event Director"]
 
 [node name="EventTimer" type="Timer" parent="Event Director"]
+one_shot = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="DemonCommunicator" type="RichTextLabel" parent="CanvasLayer2"]
+unique_name_in_owner = true
+light_mask = 2
+visibility_layer = 2
+z_index = 4
+anchors_preset = -1
+anchor_left = 0.787
+anchor_top = 0.356
+anchor_right = 0.948
+anchor_bottom = 0.594
+offset_left = 0.375916
+offset_top = 0.311996
+offset_right = -0.0960693
+offset_bottom = 0.0879822
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_3pmot")
+text = "test14313423rsdfdsgfsgsdgf"
+script = ExtResource("8_kk6e8")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer2/DemonCommunicator"]
+unique_name_in_owner = true
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="CanvasLayer2/DemonCommunicator"]
+unique_name_in_owner = true
+
+[node name="ApiTimer" type="Timer" parent="CanvasLayer2/DemonCommunicator"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="Info" type="Label" parent="CanvasLayer2"]
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.096
+anchor_right = 0.481
+anchor_bottom = 0.164
+offset_left = 0.223969
+offset_top = -0.208
+offset_right = -0.112061
+offset_bottom = -0.272003
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="Background/Quest2/Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Background/Quest2/Blue" to="Background/Quest2" method="_on_blue_pressed"]
@@ -656,9 +678,9 @@ script = ExtResource("13_kr52a")
 [connection signal="pressed" from="Background/Quest4/Button8" to="Background/Quest4" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Background/Quest4/Button9" to="Background/Quest4" method="_on_button_9_pressed"]
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
-[connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
-[connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
-[connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
+[connection signal="pressed" from="Play" to="CanvasLayer2/DemonCommunicator" method="_on_play_pressed"]
+[connection signal="pressed" from="VolDown" to="Background/MainScene" method="on_vol_down_pressed"]
+[connection signal="pressed" from="VolUp" to="Background/MainScene" method="on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
 [connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
 [connection signal="pressed" from="Button" to="Background/MainScene" method="_on_button_pressed"]

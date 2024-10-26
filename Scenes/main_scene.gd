@@ -87,14 +87,14 @@ func _on_stop_pressed() -> void:
 var current_volume: float = 0.5
 
 # Metoda zwiększająca głośność
-func _on_vol_up_pressed() -> void:
+func on_vol_up_pressed() -> void:
 	current_volume = min(current_volume + volume_step, max_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zwiększona: ", current_volume)
 	$"../../AudioStreamPlayer".play()
 
 # Metoda zmniejszająca głośność
-func _on_vol_down_pressed() -> void:
+func on_vol_down_pressed() -> void:
 	current_volume = max(current_volume - volume_step, min_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zmniejszona: ", current_volume)
@@ -103,12 +103,12 @@ func _on_vol_down_pressed() -> void:
 
 func _on_credits_toggled(toggled_on: bool) -> void:
 	pass
-	#if toggled_on:
-		#$CenterContainer/Credits.show()
-		#$"../../AudioStreamPlayer".play()
-	#else:
-		#$CenterContainer/Credits.hide()
-		#$"../../AudioStreamPlayer".play()
+	if toggled_on:
+		$CenterContainer/Credits.show()
+		$"../../AudioStreamPlayer".play()
+	else:
+		$CenterContainer/Credits.hide()
+		$"../../AudioStreamPlayer".play()
 
 
 func _on_button_pressed() -> void:
