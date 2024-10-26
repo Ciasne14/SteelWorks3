@@ -11,7 +11,6 @@ var gulaszes: Array =[
 	"Strogonow (Boeuf Stroganoff) – chociaż technicznie nie jest klasycznym gulaszem, jest często zaliczany do tej kategorii. Przygotowywany z wołowiny, śmietany, cebuli i pieczarek, ma kremowy sos i delikatny smak.",
 	"Gulasz cygański – pikantniejsza wersja, często z większą ilością papryki, pomidorów i cebuli, czasem z dodatkiem kiełbasy. Popularny w Polsce."]
 
-@onready var generate_files_button = $GenerateFilesButton  # Adjust the path if needed
 var amount_of_images = 100
 
 func create_empty_files_on_desktop(file_count: int):

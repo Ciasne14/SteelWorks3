@@ -12,7 +12,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			if event.keycode == Key.KEY_ALT:
-				print("Alt key is blocked.")
+				$althandler.visible = true
 				return  # Ignore the Alt key press
 
 func _on_q_1_mouse_entered() -> void:
@@ -71,11 +71,6 @@ func _on_q_2_pressed() -> void:
 
 func disable_enable_buttons(disableOrEnable):
 	buttons_are_enabled = disableOrEnable
-	$Play.disabled = disableOrEnable
-	$VolDown.disabled = disableOrEnable 
-	$VolUp.disabled = disableOrEnable 
-	$Credits.disabled = disableOrEnable
-	$Stop.disabled = disableOrEnable
 	$Button.disabled = disableOrEnable
 	$Button2.disabled = disableOrEnable
 	$Button3.disabled = disableOrEnable

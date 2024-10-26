@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=32 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Scenes/scream.mp3" id="20_lo6q1"]
 [ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Images/start_click.mp3" id="20_mvfre"]
 [ext_resource type="Script" path="res://Scenes/background_sound.gd" id="21_m6fvp"]
+[ext_resource type="Script" path="res://Scenes/althandler.gd" id="24_1au4v"]
 
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
@@ -50,6 +51,9 @@ default_font_size = 16
 [sub_resource type="Theme" id="Theme_rbmuq"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_lcgcb"]
+default_font = ExtResource("5_d1qnp")
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -709,6 +713,24 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
+[node name="althandler" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.264
+anchor_right = 0.55
+anchor_bottom = 0.443
+offset_top = -0.0720062
+offset_right = 0.399963
+offset_bottom = -0.0640259
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lcgcb")
+text = "Prosimy nie regulowac odbiorników i nie alt-tabować"
+autowrap_mode = 2
+script = ExtResource("24_1au4v")
+
 [connection signal="pressed" from="Background/Quest2/Blue" to="." method="_on_blue_pressed"]
 [connection signal="pressed" from="Background/Quest2/Blue" to="Background/Quest2" method="_on_blue_pressed"]
 [connection signal="pressed" from="Background/Quest3/Button" to="Background/Quest3" method="_on_button_pressed"]
@@ -747,3 +769,4 @@ uppercase = true
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
+[connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]
