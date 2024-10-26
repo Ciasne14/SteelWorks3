@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=11 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
+[ext_resource type="AudioStream" uid="uid://r6yqb1p8sfiy" path="res://click[0-0-1].mp3" id="9_71gdp"]
 
 [sub_resource type="Theme" id="Theme_l3daf"]
 default_font = ExtResource("4_mw2t7")
@@ -63,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Credits" type="RichTextLabel" parent="Background/MainScene/CenterContainer"]
+visible = false
 layout_mode = 2
 theme = SubResource("Theme_l3daf")
 bbcode_enabled = true
@@ -176,6 +178,67 @@ texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.769
+anchor_top = 0.747
+anchor_right = 0.825
+anchor_bottom = 0.822
+offset_left = 0.111877
+offset_top = -0.0560303
+offset_right = 45.5999
+offset_bottom = 34.344
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.59, 0.59)
+texture_normal = ExtResource("5_oexas")
+texture_pressed = ExtResource("6_ak2rn")
+texture_hover = ExtResource("7_75aa8")
+stretch_mode = 0
+
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.882
+anchor_top = 0.747
+anchor_right = 0.938
+anchor_bottom = 0.822
+offset_left = -0.0640869
+offset_top = -0.0560303
+offset_right = 45.424
+offset_bottom = 34.344
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.59, 0.59)
+texture_normal = ExtResource("5_oexas")
+texture_pressed = ExtResource("6_ak2rn")
+texture_hover = ExtResource("7_75aa8")
+stretch_mode = 0
+
+[node name="Button3" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.827
+anchor_top = 0.202
+anchor_right = 0.906
+anchor_bottom = 0.307
+offset_left = 0.295959
+offset_top = 0.103989
+offset_right = 19.288
+offset_bottom = 15.064
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.82, 0.82)
+texture_normal = ExtResource("5_oexas")
+texture_pressed = ExtResource("6_ak2rn")
+texture_hover = ExtResource("7_75aa8")
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_71gdp")
+volume_db = -15.0
 
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
