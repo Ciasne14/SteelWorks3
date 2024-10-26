@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=29 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
 [ext_resource type="Script" path="res://Scenes/event_director.gd" id="13_kr52a"]
 [ext_resource type="Script" path="res://escaper.gd" id="14_n5ll0"]
+[ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Scenes/scream.mp3" id="20_lo6q1"]
 [ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Images/start_click.mp3" id="20_mvfre"]
 [ext_resource type="Script" path="res://Scenes/background_sound.gd" id="21_m6fvp"]
 
@@ -643,7 +644,7 @@ metadata/_edit_use_anchors_ = true
 wait_time = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Escaper"]
-stream = ExtResource("10_xufgv")
+stream = ExtResource("20_lo6q1")
 
 [node name="Event Director" type="Control" parent="."]
 anchors_preset = 0
