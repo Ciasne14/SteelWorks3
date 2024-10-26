@@ -25,18 +25,18 @@ func play_whisper():
 	
 func volume_down() -> void:
 	var vol_down_button = $"../VolDown"
-	vol_down_button.texture_normal = preload("res://buttonpressed.png")
+	vol_down_button.texture_normal = preload("res://Images/buttonpressed.png")
 	$"../Background/MainScene".on_vol_down_pressed()
 	await get_tree().create_timer(1.0).timeout  # Czekaj na 1 sekundę
-	vol_down_button.texture_normal = preload("res://button.png")  # Przywróć normalną teksturę
+	vol_down_button.texture_normal = preload("res://Images/button.png")  # Przywróć normalną teksturę
 	
 		
 func volume_up():
 	var vol_up_button = $"../VolUp"
-	vol_up_button.texture_normal = preload("res://buttonpressed.png")
+	vol_up_button.texture_normal = preload("res://Images/buttonpressed.png")
 	$"../Background/MainScene".on_vol_up_pressed()
 	await get_tree().create_timer(1.0).timeout  # Czekaj na 1 sekundę
-	vol_up_button.texture_normal =  preload("res://button.png")
+	vol_up_button.texture_normal =  preload("res://Images/button.png")
 	
 # Funkcja odpowiedzialna za uruchomienie obrotu z losową prędkością i czasem
 func start_random_rotation():

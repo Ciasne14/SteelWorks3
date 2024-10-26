@@ -27,7 +27,7 @@
 
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 22
+default_font_size = 28
 
 [sub_resource type="Theme" id="Theme_glton"]
 default_base_scale = 1.0

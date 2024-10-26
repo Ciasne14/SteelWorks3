@@ -112,6 +112,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_play_pressed() -> void:
+	$"../../Event Director".start_random_event()
 	$"../../Play".disabled = true
 	$"../../AudioStreamPlayer".play()
 	$"../../Stop".disabled=true
