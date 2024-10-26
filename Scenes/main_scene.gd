@@ -102,12 +102,13 @@ func _on_vol_down_pressed() -> void:
 
 
 func _on_credits_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		$CenterContainer/Credits.show()
-		$"../../AudioStreamPlayer".play()
-	else:
-		$CenterContainer/Credits.hide()
-		$"../../AudioStreamPlayer".play()
+	pass
+	#if toggled_on:
+		#$CenterContainer/Credits.show()
+		#$"../../AudioStreamPlayer".play()
+	#else:
+		#$CenterContainer/Credits.hide()
+		#$"../../AudioStreamPlayer".play()
 
 
 func _on_button_pressed() -> void:
@@ -115,6 +116,10 @@ func _on_button_pressed() -> void:
 
 
 func _on_play_pressed() -> void:
+	$"../../Play".disabled = false
+	$"../../VolDown".disabled = false
+	$"../../VolUp".disabled = false
+	$"../../Credits".disabled = false
 	$"../../AudioStreamPlayer".play()
 	$"../../Stop".disabled=true
 	use_copied_wallpaper(get_current_wallpaper())
