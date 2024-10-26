@@ -490,6 +490,7 @@ offset_right = -0.248047
 offset_bottom = 0.143982
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
