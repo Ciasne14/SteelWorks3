@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=30 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
 [ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
 [ext_resource type="Script" path="res://Scenes/event_director.gd" id="13_kr52a"]
+[ext_resource type="Script" path="res://Scenes/stop.gd" id="14_4rpgv"]
 [ext_resource type="Script" path="res://escaper.gd" id="14_n5ll0"]
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Scenes/scream.mp3" id="20_lo6q1"]
 [ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Images/start_click.mp3" id="20_mvfre"]
@@ -486,12 +487,12 @@ offset_right = -0.248047
 offset_bottom = 0.143982
 grow_horizontal = 2
 grow_vertical = 2
-disabled = true
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 texture_disabled = ExtResource("5_oexas")
 stretch_mode = 0
+script = ExtResource("14_4rpgv")
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
@@ -724,7 +725,7 @@ uppercase = true
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="on_vol_down_pressed"]
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
-[connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
+[connection signal="pressed" from="Stop" to="Stop" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Button3" to="Background/MainScene" method="_on_button_pressed"]

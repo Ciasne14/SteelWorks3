@@ -71,11 +71,6 @@ func get_wallpaper_path(output: String) -> String:
 		
 
 
-func _on_stop_pressed() -> void:
-	$"../../AudioStreamPlayer".play()
-	get_tree().quit()
-
-
 # Maksymalna i minimalna wartość głośności, tutaj ustawiona od 0 do 1 (czyli od 0% do 100%)
 @export var max_volume: float = 1.0
 @export var min_volume: float = 0.0
