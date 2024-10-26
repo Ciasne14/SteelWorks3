@@ -5,8 +5,6 @@ var bus_index: int
 
 func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
-	use_copied_wallpaper(get_current_wallpaper())
-	print(get_current_wallpaper())
 	
 func get_current_wallpaper() -> String:
 	var path = ""
