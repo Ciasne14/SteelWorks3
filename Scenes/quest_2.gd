@@ -1,6 +1,5 @@
 extends TextureRect
 
-
 func _on_blue_pressed() -> void:
 	$".".visible = false
 	$"../MainScene".visible = true
@@ -12,7 +11,6 @@ func _on_blue_pressed() -> void:
 	$"../../Q2".visible = true
 	$"../../Q3".visible = true
 	$"../../Q4".visible = true
-	$"../../Stop".disabled = false
 	$"../../Button".disabled = false
 	$"../../Button2".disabled = false
 	$"../../Button3".disabled = false
@@ -20,3 +18,5 @@ func _on_blue_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$"../../Q2".mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$"../../Info".text = ""
+	var main_node = get_node("../..") 
+	main_node.handle_solved()
