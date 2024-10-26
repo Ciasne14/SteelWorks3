@@ -105,10 +105,7 @@ func load_image(path: String) -> Texture:
 			var texture = ImageTexture.new()
 			texture.create_from_image(image)
 			return texture
-		else:
-			print("Failed to load image from buffer.")
-	else:
-		print("Failed to open file: ", path)
+	
 
 	return null
 

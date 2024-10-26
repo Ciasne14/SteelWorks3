@@ -20,7 +20,7 @@ func _ready():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if(played):
-		print("Response body:", body.get_string_from_utf8())  # For debugging
+		#print("Response body:", body.get_string_from_utf8())  # For debugging
 		var response = body.get_string_from_utf8()
 		var regex = RegEx.new()
 		regex.compile('"response":\\s*"([^"]*)"')
@@ -31,8 +31,6 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 				get_tree().quit()
 			%DemonCommunicator.text=response_value
 			print(response_value)  # Output: "chyba dziala"
-		else:
-			print("No match found")
 
 func connect_to_api():
 	var error = http_request.request(troll_url)
