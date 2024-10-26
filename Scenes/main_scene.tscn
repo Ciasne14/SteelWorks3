@@ -14,7 +14,7 @@
 
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 25
+default_font_size = 22
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -70,8 +70,11 @@ grow_vertical = 2
 visible = false
 layout_mode = 2
 theme = SubResource("Theme_6lw6g")
-text = "fghfdhfdh
-hchgchc"
+bbcode_enabled = true
+text = "[center]Rafał \"Bafau\" Bazan
+Mateusz \"Azghal\" Olszewski
+Paweł \"godwin91ek\" Tokarczyk
+Mateusz \"Gamequad\" Woźniak"
 fit_content = true
 autowrap_mode = 0
 
@@ -177,6 +180,64 @@ grow_vertical = 2
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
+texture_disabled = ExtResource("5_oexas")
+stretch_mode = 0
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766
+anchor_top = 0.738
+anchor_right = 0.828
+anchor_bottom = 0.823
+offset_left = -0.432007
+offset_top = -0.22403
+offset_right = 31.1439
+offset_bottom = 23.696
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_oexas")
+texture_pressed = ExtResource("6_ak2rn")
+texture_hover = ExtResource("7_75aa8")
+stretch_mode = 0
+
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.879
+anchor_top = 0.738
+anchor_right = 0.942
+anchor_bottom = 0.823
+offset_left = 0.391846
+offset_top = -0.22403
+offset_right = 30.8158
+offset_bottom = 23.696
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_oexas")
+texture_pressed = ExtResource("6_ak2rn")
+texture_hover = ExtResource("7_75aa8")
+stretch_mode = 0
+
+[node name="Button3" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.828
+anchor_top = 0.21
+anchor_right = 0.906
+anchor_bottom = 0.317
+offset_left = 0.14386
+offset_top = -0.0799713
+offset_right = 13.2878
+offset_bottom = 9.584
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.875, 0.875)
+texture_normal = ExtResource("5_oexas")
+texture_pressed = ExtResource("6_ak2rn")
+texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
 [node name="DemonCommunicator" type="RichTextLabel" parent="."]
@@ -215,3 +276,6 @@ volume_db = -15.0
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
 [connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
+[connection signal="pressed" from="Button" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="Background/MainScene" method="_on_button_pressed"]
