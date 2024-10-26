@@ -41,7 +41,6 @@ expand_mode = 1
 script = ExtResource("3_fj4oy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
