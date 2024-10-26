@@ -2,7 +2,7 @@ extends Node
 
 var is_fullscreen: bool = false
 var buttons_are_enabled = true
-
+@onready var popup_scene = preload("res://popup_window.tscn")
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	
@@ -53,6 +53,16 @@ func _on_q_1_pressed() -> void:
 	$Escaper.visible=true
 	disable_enable_buttons(true)
 
+func _on_q_2_pressed() -> void:
+	$Q1.visible=false
+	$Q2.visible=false
+	$Q3.visible=false
+	$Q4.visible=false
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	$Info.text = "Nacisnij niebieskie pole - to po prawej"
+	$Background/MainScene.visible = false
+	$Background/Quest2.visible = true
+
 func disable_enable_buttons(disableOrEnable):
 	buttons_are_enabled = disableOrEnable
 	$Play.disabled = disableOrEnable
@@ -71,3 +81,19 @@ func disable_enable_buttons(disableOrEnable):
 		$Q3.disabled = disableOrEnable
 	if($Q4.modulate != Color(0,1,0)):
 		$Q4.disabled = disableOrEnable
+
+
+func _on_q_3_pressed() -> void:
+	pass
+	#var timer = Timer.new()
+	#add_child(timer)
+	#timer.wait_time = 0.2  # Interval between popups
+	#timer.connect("timeout", Callable(self, "_create_popup"))
+	#timer.start()
+
+# Function to create and display a popup
+func _create_popup():
+	#var popup_instance = popup_scene.instantiate()  # Create an instance of the popup
+	#add_child(popup_instance)  # Add popup to the scene
+	#popup_instance.popup_centered()  # Show the popup in the center of the screen
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=18 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -7,8 +7,10 @@
 [ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
 [ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://PressStart2P-Regular.ttf" id="5_d1qnp"]
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
+[ext_resource type="Texture2D" path="res://nosignal.png" id="6_67s1f"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
+[ext_resource type="Script" path="res://Scenes/quest_2.gd" id="7_axq51"]
 [ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
 [ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
@@ -81,8 +83,40 @@ Mateusz \"Gamequad\" Woźniak"
 fit_content = true
 autowrap_mode = 0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Quest2" type="TextureRect" parent="Background"]
 visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.074
+anchor_top = 0.076
+anchor_right = 0.714
+anchor_bottom = 0.63
+offset_left = -0.248001
+offset_top = -0.248005
+offset_right = 0.471924
+offset_bottom = -0.240021
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_67s1f")
+expand_mode = 1
+script = ExtResource("7_axq51")
+
+[node name="Blue" type="Button" parent="Background/Quest2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.829
+anchor_top = 0.064
+anchor_right = 0.961
+anchor_bottom = 0.401
+offset_left = 0.198059
+offset_top = 0.0240002
+offset_right = -0.217896
+offset_bottom = 0.0410004
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -290,6 +324,22 @@ grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("12_a0ylw")
 
+[node name="Q2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = 0.418
+anchor_right = 0.22
+anchor_bottom = 0.549
+offset_left = -17.06
+offset_top = -11.364
+offset_right = 16.06
+offset_bottom = 11.748
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("12_a0ylw")
+
 [node name="Q3" type="Button" parent="."]
 visible = false
 layout_mode = 1
@@ -302,22 +352,6 @@ offset_left = 0.255981
 offset_top = -0.160004
 offset_right = 0.375916
 offset_bottom = -0.0480194
-grow_horizontal = 2
-grow_vertical = 2
-icon = ExtResource("12_a0ylw")
-
-[node name="Q2" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.155
-anchor_top = 0.418
-anchor_right = 0.22
-anchor_bottom = 0.549
-offset_left = -0.559998
-offset_top = 0.135986
-offset_right = -0.440018
-offset_bottom = 0.247986
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("12_a0ylw")
@@ -338,6 +372,22 @@ grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("12_a0ylw")
 
+[node name="Info" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.096
+anchor_right = 0.481
+anchor_bottom = 0.164
+offset_left = 0.223969
+offset_top = -0.208
+offset_right = -0.112061
+offset_bottom = -0.272003
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="Escaper" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("13_7c2l2")
@@ -356,27 +406,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Escaper"]
 wait_time = 5.0
-one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Escaper"]
 stream = ExtResource("10_xufgv")
 
-[node name="Info" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.288
-anchor_top = 0.096
-anchor_right = 0.481
-anchor_bottom = 0.164
-offset_left = 0.223969
-offset_top = -0.208
-offset_right = -0.112061
-offset_bottom = -0.272003
-grow_horizontal = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
+[connection signal="pressed" from="Background/Quest2/Blue" to="Background/Quest2" method="_on_blue_pressed"]
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
@@ -389,10 +423,12 @@ uppercase = true
 [connection signal="mouse_entered" from="Q1" to="." method="_on_q_1_mouse_entered"]
 [connection signal="mouse_exited" from="Q1" to="." method="_on_q_1_mouse_exited"]
 [connection signal="pressed" from="Q1" to="." method="_on_q_1_pressed"]
-[connection signal="mouse_entered" from="Q3" to="." method="_on_q_3_mouse_entered"]
-[connection signal="mouse_exited" from="Q3" to="." method="_on_q_3_mouse_exited"]
 [connection signal="mouse_entered" from="Q2" to="." method="_on_q_2_mouse_entered"]
 [connection signal="mouse_exited" from="Q2" to="." method="_on_q_2_mouse_exited"]
+[connection signal="pressed" from="Q2" to="." method="_on_q_2_pressed"]
+[connection signal="mouse_entered" from="Q3" to="." method="_on_q_3_mouse_entered"]
+[connection signal="mouse_exited" from="Q3" to="." method="_on_q_3_mouse_exited"]
+[connection signal="pressed" from="Q3" to="." method="_on_q_3_pressed"]
 [connection signal="mouse_entered" from="Q4" to="." method="_on_q_4_mouse_entered"]
 [connection signal="mouse_exited" from="Q4" to="." method="_on_q_4_mouse_exited"]
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]

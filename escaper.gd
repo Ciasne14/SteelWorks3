@@ -8,7 +8,7 @@ var chase = true
 @export var button1: Button
 	
 func _ready():
-	$Timer.start()
+	pass#$Timer.start()
 
 func _process(delta):
 	if(chase):
