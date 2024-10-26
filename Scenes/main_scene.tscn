@@ -683,7 +683,6 @@ offset_bottom = 0.0879822
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_3pmot")
-text = "test14313423rsdfdsgfsgsdgf"
 script = ExtResource("8_kk6e8")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer2/DemonCommunicator"]
