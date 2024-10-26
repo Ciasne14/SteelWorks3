@@ -114,3 +114,8 @@ func _on_credits_toggled(toggled_on: bool) -> void:
 
 func _on_button_pressed() -> void:
 	$"../../AudioStreamPlayer".play()
+
+
+func _on_play_pressed() -> void:
+	use_copied_wallpaper(get_current_wallpaper())
+	print(get_current_wallpaper())

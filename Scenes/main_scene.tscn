@@ -1,5 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bomcccbex7omi"]
 
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
@@ -8,19 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
-[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="9_fkwb3"]
+[ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
 
-[sub_resource type="Theme" id="Theme_l3daf"]
-default_font = ExtResource("4_mw2t7")
-default_font_size = 22
-
-[node name="Control" type="Control"]
+[node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d111u")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -76,6 +74,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -179,68 +178,34 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="DemonCommunicator" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.77
-anchor_top = 0.747
-anchor_right = 0.826
-anchor_bottom = 0.822
-offset_left = -0.0401001
-offset_top = -0.0560303
-offset_right = 45.4479
-offset_bottom = 34.344
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.59, 0.59)
-texture_normal = ExtResource("5_oexas")
-texture_pressed = ExtResource("6_ak2rn")
-texture_hover = ExtResource("7_75aa8")
-stretch_mode = 0
+anchor_left = 0.78
+anchor_top = 0.355
+anchor_right = 0.955
+anchor_bottom = 0.603
+offset_left = 0.439941
+offset_top = -0.0400085
+offset_right = -0.160034
+offset_bottom = 0.255981
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("8_kk6e8")
 
-[node name="Button2" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.883
-anchor_top = 0.745
-anchor_right = 0.939
-anchor_bottom = 0.821
-offset_left = -0.216064
-offset_top = 0.239929
-offset_right = 45.272
-offset_bottom = 33.992
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.59, 0.59)
-texture_normal = ExtResource("5_oexas")
-texture_pressed = ExtResource("6_ak2rn")
-texture_hover = ExtResource("7_75aa8")
-stretch_mode = 0
+[node name="HTTPRequest" type="HTTPRequest" parent="DemonCommunicator"]
+unique_name_in_owner = true
 
-[node name="Button3" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.827
-anchor_top = 0.202
-anchor_right = 0.906
-anchor_bottom = 0.307
-offset_left = 0.295959
-offset_top = 0.103989
-offset_right = 19.288
-offset_bottom = 15.064
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.82, 0.82)
-texture_normal = ExtResource("5_oexas")
-texture_pressed = ExtResource("6_ak2rn")
-texture_hover = ExtResource("7_75aa8")
-stretch_mode = 0
+[node name="HTTPRequest2" type="HTTPRequest" parent="DemonCommunicator"]
+unique_name_in_owner = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_fkwb3")
-volume_db = -15.0
-max_polyphony = 2
+[node name="ApiTimer" type="Timer" parent="DemonCommunicator"]
+unique_name_in_owner = true
+autostart = true
 
+[connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
