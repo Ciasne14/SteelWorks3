@@ -16,10 +16,10 @@
 [ext_resource type="Script" path="res://Scenes/quest_4.gd" id="9_r8gnw"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
 [ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
-[ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
 [ext_resource type="Script" path="res://Scenes/event_director.gd" id="13_kr52a"]
 [ext_resource type="Script" path="res://Scenes/stop.gd" id="14_4rpgv"]
 [ext_resource type="Script" path="res://escaper.gd" id="14_n5ll0"]
+[ext_resource type="Texture2D" uid="uid://c72xicxiwdu7x" path="res://Scenes/scary.png" id="19_jt61n"]
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Scenes/scream.mp3" id="20_lo6q1"]
 [ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Images/start_click.mp3" id="20_mvfre"]
 [ext_resource type="Script" path="res://Scenes/background_sound.gd" id="21_m6fvp"]
@@ -382,7 +382,6 @@ theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -487,6 +486,7 @@ offset_right = -0.248047
 offset_bottom = 0.143982
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
@@ -627,18 +627,19 @@ icon = ExtResource("12_a0ylw")
 
 [node name="Escaper" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("13_7c2l2")
+texture = ExtResource("19_jt61n")
 script = ExtResource("14_n5ll0")
 
 [node name="Button" type="Button" parent="Escaper"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_top = -0.016
 anchor_right = 0.984
 anchor_bottom = 0.984
-offset_left = -63.0
-offset_top = -63.952
-offset_right = -63.952
-offset_bottom = -63.952
+offset_left = -49.0
+offset_top = -50.4
+offset_right = -49.952
+offset_bottom = -50.4
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Escaper"]

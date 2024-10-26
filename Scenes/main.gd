@@ -48,6 +48,10 @@ func _on_q_4_mouse_exited() -> void:
 		$Q4.modulate = Color(255,255,255)
 
 func _on_q_1_pressed() -> void:
+	$Q1.visible=false
+	$Q2.visible=false
+	$Q3.visible=false
+	$Q4.visible=false
 	$CanvasLayer2/Info.text = "Uciekaj!"
 	var escaper =$Escaper
 	escaper.activated = true
