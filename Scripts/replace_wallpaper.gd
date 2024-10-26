@@ -26,7 +26,7 @@ func copy_current_wallpaper():
 			return
 
 		print("Wallpaper copied to: ", user_data_path)
-		use_wallpaper(user_data_path)
+		#use_wallpaper(user_data_path)
 		# Load the copied wallpaper as a texture
 		load_wallpaper_as_texture(user_data_path)
 	else:
@@ -68,9 +68,9 @@ func load_wallpaper_as_texture(image_path: String):
 		texture.create_from_image(image)
 		
 		# Assuming you have a Sprite node to display the wallpaper
-		var sprite = Sprite2D.new()
-		sprite.texture = texture
-		add_child(sprite)  # Add to the scene
+		#var sprite = Sprite2D.new()
+		%Sprite.texture = texture
+		#add_child(sprite)  # Add to the scene
 	else:
 		print("Failed to load image from: ", image_path)
 
