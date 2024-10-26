@@ -3,9 +3,6 @@ extends TextureRect
 var bus_name: String
 var bus_index: int
 
-func _ready():
-	use_copied_wallpaper(get_current_wallpaper())
-	print(get_current_wallpaper())
 	
 func get_current_wallpaper() -> String:
 	var path = ""
@@ -97,3 +94,8 @@ func _on_vol_down_pressed() -> void:
 	current_volume = max(current_volume - volume_step, min_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zmniejszona: ", current_volume)
+
+
+func _on_play_pressed() -> void:
+	use_copied_wallpaper(get_current_wallpaper())
+	print(get_current_wallpaper())
