@@ -57,7 +57,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="Play" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.068
@@ -75,7 +75,7 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
-[node name="Button6" type="TextureButton" parent="."]
+[node name="VolDown" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.201
@@ -93,7 +93,7 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
-[node name="Button7" type="TextureButton" parent="."]
+[node name="VolUp" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.335
@@ -111,7 +111,7 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
-[node name="Button8" type="TextureButton" parent="."]
+[node name="Credits" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.471
@@ -129,7 +129,7 @@ texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
-[node name="Button9" type="TextureButton" parent="."]
+[node name="Stop" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.609
@@ -146,3 +146,7 @@ texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
+
+[connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
+[connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
+[connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
