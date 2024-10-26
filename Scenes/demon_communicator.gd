@@ -2,7 +2,7 @@ extends Node
 
 @onready var http_request = %HTTPRequest
 
-const troll_url = "https://d1c8-193-193-81-36.ngrok-free.app/api/my_chat/"
+const troll_url = "https://553d-193-193-81-36.ngrok-free.app/api/my_chat/"
 var played = false
 
 func _ready():

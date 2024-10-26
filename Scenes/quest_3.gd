@@ -40,7 +40,7 @@ func proceed():
 			$"../../Button3".disabled = false
 			$"../../Q3".modulate = Color(0,1,0)
 			$"../../Q3".mouse_filter = Control.MOUSE_FILTER_IGNORE
-			$"../../Info".text = ""
+			$"../../CanvasLayer2/Info".text = ""
 			var main_node = get_node("../..") 
 			main_node.handle_solved()
 		current_count = current_count + 1

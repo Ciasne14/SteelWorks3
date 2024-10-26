@@ -45,7 +45,7 @@ func is_mouse_over() -> bool:
 func _on_timer_timeout() -> void:
 	if(!done):
 		chase = false
-		$"../Info".text = "Zlap mnie!"
+		$"../CanvasLayer2/Info".text = "Zlap mnie!"
 
 signal health_changed(new_value)
 
@@ -66,7 +66,7 @@ func _on_button_pressed() -> void:
 		$".".visible = false
 		$"../Q1".modulate = Color(0,1,0)
 		$"../Q1".mouse_filter = Control.MOUSE_FILTER_IGNORE
-		$"../Info".text = ""
+		$"../CanvasLayer2/Info".text = ""
 		var main_node = get_node("..") 
 		main_node.handle_solved()
 		done = true

@@ -48,7 +48,7 @@ func _on_q_4_mouse_exited() -> void:
 		$Q4.modulate = Color(255,255,255)
 
 func _on_q_1_pressed() -> void:
-	$Info.text = "Uciekaj!"
+	$CanvasLayer2/Info.text = "Uciekaj!"
 	var escaper =$Escaper
 	escaper.activated = true
 	$Escaper/Timer.start()
@@ -61,7 +61,7 @@ func _on_q_2_pressed() -> void:
 	$Q3.visible=false
 	$Q4.visible=false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	$CanvasLayer2/Info.text = "Nacisnij niebieskie pole - to po prawej"
+	$CanvasLayer2/Info.text = "Nacisnij granatowe pole"
 	$Background/MainScene.visible = false
 	$Background/Quest2.visible = true
 
@@ -101,6 +101,7 @@ func _create_popup():
 
 
 func _on_q_4_pressed() -> void:
+	$CanvasLayer2/Info.text = "Wyeliminuj klocki od najwyższej wartości"
 	$Q1.visible=false
 	$Q2.visible=false
 	$Q3.visible=false

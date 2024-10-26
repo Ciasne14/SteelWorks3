@@ -73,7 +73,7 @@ func check_for_value(button_val):
 		$"../../Button3".disabled = false
 		$"../../Q4".modulate = Color(0,1,0)
 		$"../../Q4".mouse_filter = Control.MOUSE_FILTER_IGNORE
-		$"../../Info".text = ""
+		$"../../CanvasLayer2/Info".text = ""
 		var main_node = get_node("../..") 
 		main_node.handle_solved()
 		

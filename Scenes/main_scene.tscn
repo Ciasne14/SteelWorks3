@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=28 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -19,14 +19,35 @@
 [ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
 [ext_resource type="Script" path="res://Scenes/event_director.gd" id="13_kr52a"]
 [ext_resource type="Script" path="res://escaper.gd" id="14_n5ll0"]
+[ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Images/start_click.mp3" id="20_mvfre"]
+[ext_resource type="Script" path="res://Scenes/background_sound.gd" id="21_m6fvp"]
 
 [sub_resource type="Theme" id="Theme_6lw6g"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 22
 
+[sub_resource type="Theme" id="Theme_glton"]
+default_base_scale = 1.0
+default_font = ExtResource("5_d1qnp")
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_7h0h5"]
+default_base_scale = 2.0
+default_font = ExtResource("5_d1qnp")
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_1knth"]
+default_base_scale = 2.0
+default_font = ExtResource("5_d1qnp")
+default_font_size = 35
+
 [sub_resource type="Theme" id="Theme_3pmot"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 16
+
+[sub_resource type="Theme" id="Theme_rbmuq"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 25
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -161,8 +182,10 @@ offset_right = 0.304047
 offset_bottom = 0.165024
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_glton")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="Background/Quest3"]
 layout_mode = 1
@@ -177,6 +200,7 @@ offset_right = 0.0200806
 offset_bottom = -0.173981
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_7h0h5")
 
 [node name="Button" type="Button" parent="Background/Quest3"]
 layout_mode = 1
@@ -224,6 +248,7 @@ offset_right = 0.160019
 offset_bottom = 0.0690002
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button2" type="Button" parent="Background/Quest4"]
@@ -239,6 +264,7 @@ offset_right = 0.146011
 offset_bottom = -0.0229797
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button3" type="Button" parent="Background/Quest4"]
@@ -254,6 +280,7 @@ offset_right = 0.0800781
 offset_bottom = 0.112015
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button4" type="Button" parent="Background/Quest4"]
@@ -269,6 +296,7 @@ offset_right = -0.355896
 offset_bottom = -0.162994
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button5" type="Button" parent="Background/Quest4"]
@@ -284,6 +312,7 @@ offset_right = -0.195984
 offset_bottom = 0.0310059
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button6" type="Button" parent="Background/Quest4"]
@@ -299,6 +328,7 @@ offset_right = -0.249939
 offset_bottom = 0.0840149
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button7" type="Button" parent="Background/Quest4"]
@@ -314,6 +344,7 @@ offset_right = 0.00802612
 offset_bottom = -0.0319901
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button8" type="Button" parent="Background/Quest4"]
@@ -329,6 +360,7 @@ offset_right = -0.263977
 offset_bottom = -0.0159912
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="Button9" type="Button" parent="Background/Quest4"]
@@ -344,6 +376,7 @@ offset_right = 0.110016
 offset_bottom = 0.0410004
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1knth")
 text = "OK"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -520,6 +553,12 @@ stretch_mode = 0
 stream = ExtResource("10_xufgv")
 volume_db = -15.0
 
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_mvfre")
+volume_db = -5.095
+autoplay = true
+script = ExtResource("21_m6fvp")
+
 [node name="Q1" type="Button" parent="."]
 visible = false
 layout_mode = 1
@@ -652,17 +691,19 @@ autostart = true
 
 [node name="Info" type="Label" parent="CanvasLayer2"]
 anchors_preset = -1
-anchor_left = 0.288
-anchor_top = 0.096
-anchor_right = 0.481
-anchor_bottom = 0.164
-offset_left = 0.223969
-offset_top = -0.208
-offset_right = -0.112061
-offset_bottom = -0.272003
+anchor_left = 0.776
+anchor_top = 0.074
+anchor_right = 0.956
+anchor_bottom = 0.201
+offset_left = 0.0479736
+offset_top = 0.0480003
+offset_right = -0.312012
+offset_bottom = -0.248001
 grow_horizontal = 2
+theme = SubResource("Theme_rbmuq")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 uppercase = true
 
 [connection signal="pressed" from="Background/Quest2/Blue" to="." method="_on_blue_pressed"]
@@ -686,6 +727,7 @@ uppercase = true
 [connection signal="pressed" from="Button" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Button3" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="finished" from="BackgroundSound" to="BackgroundSound" method="_on_finished"]
 [connection signal="mouse_entered" from="Q1" to="." method="_on_q_1_mouse_entered"]
 [connection signal="mouse_exited" from="Q1" to="." method="_on_q_1_mouse_exited"]
 [connection signal="pressed" from="Q1" to="." method="_on_q_1_pressed"]
