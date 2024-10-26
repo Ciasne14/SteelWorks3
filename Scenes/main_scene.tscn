@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=5 format=3 uid="uid://bomcccbex7omi"]
 
-[ext_resource type="Texture2D" uid="uid://bs2hfascsje7p" path="res://background_tv.png" id="1_5btbc"]
-[ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="1_xc6xc"]
-[ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="3_n654k"]
+[ext_resource type="Texture2D" uid="uid://bs2hfascsje7p" path="res://background_tv.png" id="1_22urk"]
+[ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
+[ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5btbc")
+texture = ExtResource("1_22urk")
 expand_mode = 1
 
 [node name="MainScene" type="TextureRect" parent="Background"]
@@ -35,15 +36,15 @@ offset_right = 0.471924
 offset_bottom = -0.240021
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_xc6xc")
+texture = ExtResource("2_2jry2")
 expand_mode = 1
+script = ExtResource("3_fj4oy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = ExtResource("3_n654k")
+material = ExtResource("4_sbcsv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -60,9 +61,9 @@ anchor_top = 0.733
 anchor_right = 0.156
 anchor_bottom = 0.898
 offset_left = 1.12
-offset_top = -2.98404
+offset_top = -1.98398
 offset_right = 1.28799
-offset_bottom = -2.90405
+offset_bottom = -1.90399
 grow_horizontal = 2
 grow_vertical = 2
 
