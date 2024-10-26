@@ -73,8 +73,11 @@ layout_mode = 2
 theme = SubResource("Theme_6lw6g")
 bbcode_enabled = true
 text = "[center]Rafał \"Bafau\" Bazan
+
 Mateusz \"Azghal\" Olszewski
+
 Paweł \"godwin91ek\" Tokarczyk
+
 Mateusz \"Gamequad\" Woźniak"
 fit_content = true
 autowrap_mode = 0
@@ -338,6 +341,149 @@ icon = ExtResource("12_a0ylw")
 
 [node name="Node" type="Node" parent="."]
 
+[node name="Button4" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.927
+anchor_right = 0.102
+anchor_bottom = 0.952
+offset_left = -0.472004
+offset_top = 0.303955
+offset_right = 0.495995
+offset_bottom = 0.104004
+
+[node name="Button5" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.116
+anchor_top = 0.927
+anchor_right = 0.157
+anchor_bottom = 0.952
+offset_left = 0.367996
+offset_top = 0.303955
+offset_right = 0.135986
+offset_bottom = 0.104004
+
+[node name="Button6" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.187
+anchor_top = 0.927
+anchor_right = 0.234
+anchor_bottom = 0.952
+offset_left = -0.424011
+offset_top = 0.303955
+offset_right = 0.431976
+offset_bottom = 0.104004
+
+[node name="Button7" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.927
+anchor_right = 0.29
+anchor_bottom = 0.952
+offset_left = 0.151978
+offset_top = 0.303955
+offset_right = -0.0800171
+offset_bottom = 0.104004
+
+[node name="Button8" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.302
+anchor_top = 0.927
+anchor_right = 0.369
+anchor_bottom = 0.952
+offset_left = 0.0959778
+offset_top = 0.303955
+offset_right = -0.0880127
+offset_bottom = 0.104004
+
+[node name="Button9" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.378
+anchor_top = 0.927
+anchor_right = 0.421
+anchor_bottom = 0.952
+offset_left = 0.543976
+offset_top = 0.303955
+offset_right = 0.00796509
+offset_bottom = 0.104004
+
+[node name="Button10" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.438
+anchor_top = 0.927
+anchor_right = 0.489
+anchor_bottom = 0.952
+offset_left = 0.423981
+offset_top = 0.303955
+offset_right = -0.328003
+offset_bottom = 0.104004
+
+[node name="Button11" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.927
+anchor_right = 0.562
+anchor_bottom = 0.952
+offset_left = -0.127991
+offset_top = 0.303955
+offset_right = -0.424072
+offset_bottom = 0.104004
+
+[node name="Button12" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.839
+anchor_top = 0.77
+anchor_right = 0.872
+anchor_bottom = 0.799
+offset_left = -0.528076
+offset_top = 0.039978
+offset_right = -0.544067
+offset_bottom = 0.247986
+
+[node name="Button13" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.826
+anchor_top = 0.634
+anchor_right = 0.86
+anchor_bottom = 0.657
+offset_left = -0.552063
+offset_top = 0.167999
+offset_right = 0.279968
+offset_bottom = 0.264008
+
+[node name="Button14" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.865
+anchor_top = 0.634
+anchor_right = 0.903
+anchor_bottom = 0.659
+offset_left = 0.519897
+offset_top = 0.167999
+offset_right = -0.256104
+offset_bottom = -0.0320129
+
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
@@ -355,3 +501,14 @@ icon = ExtResource("12_a0ylw")
 [connection signal="mouse_exited" from="Q2" to="." method="_on_q_2_mouse_exited"]
 [connection signal="mouse_entered" from="Q4" to="." method="_on_q_4_mouse_entered"]
 [connection signal="mouse_exited" from="Q4" to="." method="_on_q_4_mouse_exited"]
+[connection signal="pressed" from="Button4" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button5" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button6" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button7" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button8" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button9" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button10" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button11" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button12" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button13" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button14" to="Background/MainScene" method="_on_button_pressed"]
