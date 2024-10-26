@@ -1,4 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bomcccbex7omi"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -10,11 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
 [ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
-[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
-
-[sub_resource type="Theme" id="Theme_6lw6g"]
-default_font = ExtResource("5_d1qnp")
-default_font_size = 25
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -76,6 +73,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -205,9 +203,69 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 autostart = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_xufgv")
-volume_db = -15.0
+[node name="Q1" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.163
+anchor_top = 0.176
+anchor_right = 0.23
+anchor_bottom = 0.299
+offset_left = 0.223999
+offset_top = -0.0480118
+offset_right = 0.0400085
+offset_bottom = 0.247986
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("10_8v12a")
+
+[node name="Q2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.591
+anchor_top = 0.176
+anchor_right = 0.658
+anchor_bottom = 0.299
+offset_left = 0.167969
+offset_top = -0.0480118
+offset_right = -0.0160522
+offset_bottom = 0.247986
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("10_8v12a")
+
+[node name="Q3" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.163
+anchor_top = 0.423
+anchor_right = 0.23
+anchor_bottom = 0.546
+offset_left = 0.223999
+offset_top = -0.104004
+offset_right = 0.0400085
+offset_bottom = 0.191986
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("10_8v12a")
+
+[node name="Q4" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.591
+anchor_top = 0.423
+anchor_right = 0.658
+anchor_bottom = 0.546
+offset_left = 0.167969
+offset_top = -0.104004
+offset_right = -0.0160522
+offset_bottom = 0.191986
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("10_8v12a")
 
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
@@ -215,3 +273,11 @@ volume_db = -15.0
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
 [connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
+[connection signal="mouse_entered" from="Q1" to="." method="_on_q_1_mouse_entered"]
+[connection signal="mouse_exited" from="Q1" to="." method="_on_q_1_mouse_exited"]
+[connection signal="mouse_entered" from="Q2" to="." method="_on_q_2_mouse_entered"]
+[connection signal="mouse_exited" from="Q2" to="." method="_on_q_2_mouse_exited"]
+[connection signal="mouse_entered" from="Q3" to="." method="_on_q_3_mouse_entered"]
+[connection signal="mouse_exited" from="Q3" to="." method="_on_q_3_mouse_exited"]
+[connection signal="mouse_entered" from="Q4" to="." method="_on_q_4_mouse_entered"]
+[connection signal="mouse_exited" from="Q4" to="." method="_on_q_4_mouse_exited"]

@@ -117,3 +117,7 @@ func _on_button_pressed() -> void:
 func _on_play_pressed() -> void:
 	use_copied_wallpaper(get_current_wallpaper())
 	print(get_current_wallpaper())
+	$"../../Q1".visible = true
+	$"../../Q2".visible = true
+	$"../../Q3".visible = true
+	$"../../Q4".visible = true
