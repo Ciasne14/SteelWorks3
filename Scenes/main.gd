@@ -84,12 +84,12 @@ func disable_enable_buttons(disableOrEnable):
 
 
 func _on_q_3_pressed() -> void:
-	pass
-	#var timer = Timer.new()
-	#add_child(timer)
-	#timer.wait_time = 0.2  # Interval between popups
-	#timer.connect("timeout", Callable(self, "_create_popup"))
-	#timer.start()
+	$Q1.visible=false
+	$Q2.visible=false
+	$Q3.visible=false
+	$Q4.visible=false
+	$Background/MainScene.visible = false
+	$Background/Quest3.visible = true
 
 # Function to create and display a popup
 func _create_popup():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=20 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
 [ext_resource type="Script" path="res://Scenes/quest_2.gd" id="7_axq51"]
 [ext_resource type="Script" path="res://Scenes/demon_communicator.gd" id="8_kk6e8"]
+[ext_resource type="Script" path="res://Scenes/quest_3.gd" id="8_r3kv3"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="10_xufgv"]
 [ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
 [ext_resource type="Texture2D" uid="uid://bwujuhmxjljta" path="res://Images/icon.svg" id="13_7c2l2"]
@@ -118,7 +119,72 @@ offset_bottom = 0.0410004
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Quest3" type="TextureRect" parent="Background"]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.074
+anchor_top = 0.076
+anchor_right = 0.714
+anchor_bottom = 0.63
+offset_left = -0.248001
+offset_top = -0.248005
+offset_right = 0.471924
+offset_bottom = -0.240021
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3l3p7")
+expand_mode = 1
+script = ExtResource("8_r3kv3")
+
+[node name="Label" type="Label" parent="Background/Quest3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.064
+anchor_right = 0.692
+anchor_bottom = 0.565
+offset_left = -0.211975
+offset_top = 0.0240002
+offset_right = 0.304047
+offset_bottom = 0.165024
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Background/Quest3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.638
+anchor_right = 0.71
+anchor_bottom = 0.786
+offset_left = 0.0720215
+offset_top = -0.0419922
+offset_right = 0.0200806
+offset_bottom = -0.173981
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Background/Quest3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.813
+anchor_right = 0.556
+anchor_bottom = 0.939
+offset_left = -0.0559692
+offset_top = 0.133026
+offset_right = -0.327972
+offset_bottom = -0.100983
+grow_horizontal = 2
+grow_vertical = 2
+text = "OK"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -423,6 +489,7 @@ script = ExtResource("13_kr52a")
 [node name="EventTimer" type="Timer" parent="Event Director"]
 
 [connection signal="pressed" from="Background/Quest2/Blue" to="Background/Quest2" method="_on_blue_pressed"]
+[connection signal="pressed" from="Background/Quest3/Button" to="Background/Quest3" method="_on_button_pressed"]
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="DemonCommunicator" method="_on_play_pressed"]
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]

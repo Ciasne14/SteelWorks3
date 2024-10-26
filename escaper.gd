@@ -3,7 +3,7 @@ extends  Sprite2D
 const chaseSPEED = 500
 var escapeSPEED = 2000.0
 # The margin to keep the sprite inside the screen
-var margin: float = 1.0
+var margin: float = 200.0
 var chase = true
 @export var button1: Button
 	
