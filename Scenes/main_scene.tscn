@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://buttonhovered.png" id="7_75aa8"]
-[ext_resource type="AudioStream" uid="uid://r6yqb1p8sfiy" path="res://click[0-0-1].mp3" id="9_71gdp"]
+[ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://click[0-0-2](1).mp3" id="9_fkwb3"]
 
 [sub_resource type="Theme" id="Theme_l3daf"]
 default_font = ExtResource("4_mw2t7")
@@ -182,13 +182,13 @@ stretch_mode = 0
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.769
+anchor_left = 0.77
 anchor_top = 0.747
-anchor_right = 0.825
+anchor_right = 0.826
 anchor_bottom = 0.822
-offset_left = 0.111877
+offset_left = -0.0401001
 offset_top = -0.0560303
-offset_right = 45.5999
+offset_right = 45.4479
 offset_bottom = 34.344
 grow_horizontal = 2
 grow_vertical = 2
@@ -201,14 +201,14 @@ stretch_mode = 0
 [node name="Button2" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.882
-anchor_top = 0.747
-anchor_right = 0.938
-anchor_bottom = 0.822
-offset_left = -0.0640869
-offset_top = -0.0560303
-offset_right = 45.424
-offset_bottom = 34.344
+anchor_left = 0.883
+anchor_top = 0.745
+anchor_right = 0.939
+anchor_bottom = 0.821
+offset_left = -0.216064
+offset_top = 0.239929
+offset_right = 45.272
+offset_bottom = 33.992
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.59, 0.59)
@@ -237,10 +237,14 @@ texture_hover = ExtResource("7_75aa8")
 stretch_mode = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_71gdp")
+stream = ExtResource("9_fkwb3")
 volume_db = -15.0
+max_polyphony = 2
 
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="_on_vol_down_pressed"]
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
 [connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
+[connection signal="pressed" from="Button" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="Background/MainScene" method="_on_button_pressed"]

@@ -110,3 +110,7 @@ func _on_credits_toggled(toggled_on: bool) -> void:
 	else:
 		$CenterContainer/Credits.hide()
 		$"../../AudioStreamPlayer".play()
+
+
+func _on_button_pressed() -> void:
+	$"../../AudioStreamPlayer".play()
