@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=10 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="2_2jry2"]
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="3_fj4oy"]
-[ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://PressStart2P-Regular.ttf" id="4_mw2t7"]
 [ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://buttonpressed.png" id="6_ak2rn"]
@@ -60,18 +59,6 @@ offset_right = -0.213867
 offset_bottom = 0.154022
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Credits" type="RichTextLabel" parent="Background/MainScene/CenterContainer"]
-visible = false
-layout_mode = 2
-theme = SubResource("Theme_l3daf")
-bbcode_enabled = true
-text = "[center]Rafał \"Bafau\" Bazan
-Mateusz \"Azghal\" Olszewski
-Paweł \"godwin91ek\" Tokarczyk
-Mateusz \"Gamequad\" Woźniak[/center]"
-fit_content = true
-autowrap_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -210,6 +197,3 @@ autostart = true
 [connection signal="pressed" from="VolUp" to="Background/MainScene" method="_on_vol_up_pressed"]
 [connection signal="toggled" from="Credits" to="Background/MainScene" method="_on_credits_toggled"]
 [connection signal="pressed" from="Stop" to="Background/MainScene" method="_on_stop_pressed"]
-[connection signal="pressed" from="Button" to="Background/MainScene" method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="Background/MainScene" method="_on_button_pressed"]
-[connection signal="pressed" from="Button3" to="Background/MainScene" method="_on_button_pressed"]
