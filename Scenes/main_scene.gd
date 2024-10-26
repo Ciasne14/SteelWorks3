@@ -97,3 +97,10 @@ func _on_vol_down_pressed() -> void:
 	current_volume = max(current_volume - volume_step, min_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zmniejszona: ", current_volume)
+
+
+func _on_credits_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		$CenterContainer/Credits.show()
+	else:
+		$CenterContainer/Credits.hide()
