@@ -36,14 +36,12 @@ func _process(delta: float) -> void:
 # Funkcja zatrzymująca obrót (wywoływana po zakończeniu `SpinTimer`)
 func stop_rotation():
 	is_rotating = false  # Wyłączenie obrotu
-
+	var wait_time = randf_range(2.0, 5.0)
+	$EventTimer.start(wait_time)
+	
 # Sygnał `timeout` z `SpinTimer`, zatrzymuje obrót po ustalonym czasie
 func _on_SpinTimer_timeout() -> void:
 	stop_rotation()
-	
-	# Ustawienie EventTimer na kolejny losowy czas do wznowienia obrotu
-	var wait_time = randf_range(2.0, 5.0)
-	$EventTimer.start(wait_time)
 
 # Sygnał `timeout` z `EventTimer`, wywołujący nowy losowy event
 func _on_EventTimer_timeout() -> void:
