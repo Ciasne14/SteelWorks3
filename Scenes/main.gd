@@ -110,5 +110,10 @@ func _on_q_4_pressed() -> void:
 
 func handle_solved():
 	solved = solved +  1
+	$"Event Director".haunt += 1
 	if(solved == 4):
 		$Stop.disabled=false
+		$"Event Director/EventTimer".stop()
+		
+		
+	

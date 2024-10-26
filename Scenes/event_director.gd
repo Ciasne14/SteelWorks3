@@ -2,29 +2,41 @@ extends Control
 
 # Parametry rotacji
 var rotation_speed: float = 0.0
-var is_rotating: bool = false  # Kontrola obrotu
+var is_rotating: bool = false 
 var events = []
+var haunt: float = 0.0
 
 func _ready() -> void:
-	events = [volume_down]
-	start_random_event()  # Rozpocznij losowy event po starcie
+	events = [start_random_rotation, volume_down, volume_up, play_whisper]
 
 # Funkcja losująca i uruchamiająca event
 func start_random_event():
 	var event_index = randi() % events.size()
 	var selected_event = events[event_index]
-	selected_event.call()  # Wywołaj wylosowany event za pomocą `call`
+	selected_event.call()
+	$EventTimer.wait_time = randf_range(3.5-haunt, 7-haunt*2)
+	$EventTimer.start()
+	
+func _on_event_timer_timeout() -> void:
+	start_random_event()
+	
+func play_whisper():
+	$"../Background/MainScene".play_whisper()
 	
 func volume_down() -> void:
-	#$"../Background/MainScene".on_vol_down_pressed()
-	$"../VolDown".pressed
-	$"../VolDown/Timer".start()
-	await $"../VolDown/Timer".timeout
-	#$"../VolDown".texture_normal
-	start_random_event()
+	var vol_down_button = $"../VolDown"
+	vol_down_button.texture_normal = preload("res://buttonpressed.png")
+	$"../Background/MainScene".on_vol_down_pressed()
+	await get_tree().create_timer(1.0).timeout  # Czekaj na 1 sekundę
+	vol_down_button.texture_normal = preload("res://button.png")  # Przywróć normalną teksturę
+	
 		
 func volume_up():
-	$"../VolUp".pressed
+	var vol_up_button = $"../VolUp"
+	vol_up_button.texture_normal = preload("res://buttonpressed.png")
+	$"../Background/MainScene".on_vol_up_pressed()
+	await get_tree().create_timer(1.0).timeout  # Czekaj na 1 sekundę
+	vol_up_button.texture_normal =  preload("res://button.png")
 	
 # Funkcja odpowiedzialna za uruchomienie obrotu z losową prędkością i czasem
 func start_random_rotation():
@@ -43,16 +55,7 @@ func _process(delta: float) -> void:
 		# Obracaj tło zgodnie z wylosowaną prędkością
 		$"../Background/MainScene".rotation += rotation_speed * delta
 
-# Funkcja zatrzymująca obrót (wywoływana po zakończeniu `SpinTimer`)
-func stop_rotation():
-	is_rotating = false  # Wyłączenie obrotu
-	var event_delay = randf_range(1,1)
-	$EventTimer.start(event_delay)
 	
 # Sygnał `timeout` z `SpinTimer`, zatrzymuje obrót po ustalonym czasie
 func _on_SpinTimer_timeout() -> void:
-	stop_rotation()
-
-# Sygnał `timeout` z `EventTimer`, wywołujący nowy losowy event
-func _on_EventTimer_timeout() -> void:
-	start_random_event()  # Wywołaj nowy losowy event
+	is_rotating = false

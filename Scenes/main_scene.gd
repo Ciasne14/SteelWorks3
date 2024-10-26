@@ -86,31 +86,33 @@ func on_vol_up_pressed() -> void:
 	current_volume = min(current_volume + volume_step, max_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zwiększona: ", current_volume)
-	$"../../AudioStreamPlayer".play()
+	_on_button_pressed()
 
 # Metoda zmniejszająca głośność
 func on_vol_down_pressed() -> void:
 	current_volume = max(current_volume - volume_step, min_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zmniejszona: ", current_volume)
-	$"../../AudioStreamPlayer".play()
+	_on_button_pressed()
 
 
 func _on_credits_toggled(toggled_on: bool) -> void:
 	pass
 	if toggled_on:
 		$CenterContainer/Credits.show()
-		$"../../AudioStreamPlayer".play()
+		_on_button_pressed()
 	else:
 		$CenterContainer/Credits.hide()
-		$"../../AudioStreamPlayer".play()
+		_on_button_pressed()
 
 
 func _on_button_pressed() -> void:
+	$"../../AudioStreamPlayer".pitch_scale = randf_range(0.9,1.1)
 	$"../../AudioStreamPlayer".play()
 
 
 func _on_play_pressed() -> void:
+	$"../../Event Director".start_random_event()
 	$"../../Play".disabled = false
 	$"../../VolDown".disabled = false
 	$"../../VolUp".disabled = false
@@ -129,3 +131,15 @@ func _on_play_pressed() -> void:
 	$"../../Q4".visible = true
 	
 	
+var sound_library = [
+	preload("res://Whispers/whisper1.mp3"),
+	preload("res://Whispers/whisper2.mp3"),
+	preload("res://Whispers/whisper3.mp3")
+]
+
+# Funkcja do odtwarzania losowego dźwięku
+func play_whisper():
+	# Wybiera losowy indeks z tablicy dźwięków
+	var random_index = randi() % sound_library.size()
+	$"../Whispers".stream = sound_library[random_index]  # Ustaw dźwięk
+	$"../Whispers".play()  # Odtwórz dźwięk

@@ -20,3 +20,4 @@ func _on_blue_pressed() -> void:
 	$"../../CanvasLayer2/Info".text = ""
 	var main_node = get_node("../..") 
 	main_node.handle_solved()
+	
