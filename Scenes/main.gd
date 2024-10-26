@@ -1,9 +1,11 @@
 extends Node
 
 var is_fullscreen: bool = false
+var buttons_are_enabled = true
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
+	
 
 func _input(event):
 	# Check if the event is a KeyEvent (keyboard event)
@@ -13,27 +15,53 @@ func _input(event):
 				print("Alt key is blocked.")
 				return  # Ignore the Alt key press
 
-
 func _on_q_1_mouse_entered() -> void:
-	$Q1.modulate = Color(0,0,1)
+	if(buttons_are_enabled):
+		$Q1.modulate = Color(0,0,1)
 
 func _on_q_1_mouse_exited() -> void:
-	$Q1.modulate = Color(255,255,255)
+	if(buttons_are_enabled):
+		$Q1.modulate = Color(255,255,255)
 
 func _on_q_2_mouse_entered() -> void:
-	$Q2.modulate = Color(0,0,1)
+	if(buttons_are_enabled):
+		$Q2.modulate = Color(0,0,1)
 
 func _on_q_2_mouse_exited() -> void:
-	$Q2.modulate = Color(255,255,255)
+	if(buttons_are_enabled):
+		$Q2.modulate = Color(255,255,255)
 
 func _on_q_3_mouse_entered() -> void:
-	$Q3.modulate = Color(0,0,1)
+	if(buttons_are_enabled):
+		$Q3.modulate = Color(0,0,1)
 
 func _on_q_3_mouse_exited() -> void:
-	$Q3.modulate = Color(255,255,255)
+	if(buttons_are_enabled):
+		$Q3.modulate = Color(255,255,255)
 
 func _on_q_4_mouse_entered() -> void:
-	$Q4.modulate = Color(0,0,1)
+	if(buttons_are_enabled):
+		$Q4.modulate = Color(0,0,1)
 
 func _on_q_4_mouse_exited() -> void:
-	$Q4.modulate = Color(255,255,255)
+	if(buttons_are_enabled):
+		$Q4.modulate = Color(255,255,255)
+
+func _on_q_1_pressed() -> void:
+	$Escaper.visible=true
+	disable_enable_buttons(true)
+
+func disable_enable_buttons(disableOrEnable):
+	buttons_are_enabled = false
+	$Play.disabled = disableOrEnable
+	$VolDown.disabled = disableOrEnable 
+	$VolUp.disabled = disableOrEnable 
+	$Credits.disabled = disableOrEnable
+	$Stop.disabled = disableOrEnable
+	$Button.disabled = disableOrEnable
+	$Button2.disabled = disableOrEnable
+	$Button3.disabled = disableOrEnable
+	$Q1.disabled = disableOrEnable
+	$Q3.disabled = disableOrEnable
+	$Q2.disabled = disableOrEnable
+	$Q4.disabled = disableOrEnable
