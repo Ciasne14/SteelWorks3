@@ -1,9 +1,10 @@
+Camera2D
+Container
+Panel
 NinePatchRect
 TextureRect
 Label
-Panel
 Control
-Container
 CenterContainer
 HBoxContainer
 VBoxContainer

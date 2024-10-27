@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://d084kuxm7s8fl"]
+[gd_scene load_steps=2 format=3 uid="uid://f4npr0mjonm0"]
 
-[ext_resource type="Script" path="res://Scripts/popup_message.gd" id="1_23etx"]
+[sub_resource type="GDScript" id="GDScript_sc7uj"]
+script/source = "extends Control
+
+# Duration for which the popup will be displayed
+var display_time: float = 3.0
+var fade_out_time: float = 1.0
+
+func _ready() -> void:
+	# Start with the popup hidden
+	hide()
+	modulate.a = 1  # Ensure the alpha is set to fully visible
+
+func show_message(message: String) -> void:
+	$Label.text = message  # Set the message text
+	show()  # Show the popup
+	_fade_out()  # Start fading out after showing
+
+func _fade_out() -> void:
+	# Set up a timer for the display duration
+	var timer = Timer.new()
+	timer.wait_time = display_time
+	timer.one_shot = true
+
+	# Connect the timer's timeout signal using a Callable
+	timer.timeout.connect(Callable(self, \"_on_timeout\"))
+	add_child(timer)
+	timer.start()
+
+func _on_timeout() -> void:
+	# Start fading out the popup
+	var dd= 1
+
+func _on_fade_out_complete(tween: Node, key: String) -> void:
+	hide()  # Hide the popup after fading out
+"
 
 [node name="PopupMessage" type="Control"]
 layout_mode = 3
@@ -13,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_23etx")
+script = SubResource("GDScript_sc7uj")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
