@@ -2,7 +2,7 @@ extends Node
 
 @onready var http_request = %HTTPRequest
 
-const troll_url = "https://553d-193-193-81-36.ngrok-free.app/api/my_chat/"
+const troll_url = "https://6307-193-193-81-36.ngrok-free.app/api/my_chat/"
 var played = false
 
 func _ready():
@@ -26,10 +26,11 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		regex.compile('"response":\\s*"([^"]*)"')
 		var match = regex.search(response)
 		if match:
+			$NinePatchRect.visible = true
 			var response_value = match.get_string(1)
 			if(response_value == "sudo"):
 				get_tree().quit()
-			%DemonCommunicator.text=response_value
+			$NinePatchRect/Label.text=response_value
 			print(response_value)  # Output: "chyba dziala"
 
 func connect_to_api():
