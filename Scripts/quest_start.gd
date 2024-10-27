@@ -34,12 +34,14 @@ func _on_button_pressed() -> void:
 		self.visible = false
 		end_quest()
 	else:
-		$LabelText3.text = "Zly login"
+		$LabelText.text = "Wcale nie"
 		numErrors +=1
 		if(numErrors == 2):
-			$LabelText3.text = "Zaczyna sie od: " + username[0]
+			$LabelText.text = "Widzę jak się naprawdę nazywasz. Zaczyna się na " + username[0]
 		elif(numErrors >= 3):
-			$LabelText3.text = "Tak naprawde login masz: " + username
+			$LabelText.text = "Skończ już grać w te gierki!"
+			$TextEdit2.text = username
+			$TextEdit2.editable = false
 	pass
 
 func end_quest():
