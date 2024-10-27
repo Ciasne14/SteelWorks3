@@ -1,5 +1,4 @@
 res://Scenes/main_scene.tscn
 res://MaterialShaders/vhsshader.gdshader
-res://Scripts/stop.gd
 res://Scenes/intro.tscn
-res://Sounds/Openning2.ogv
+res://Scripts/quest_4.gd

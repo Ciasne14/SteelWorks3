@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=59 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://Scripts/stop.gd" id="14_4rpgv"]
 [ext_resource type="Script" path="res://Scripts/escaper.gd" id="14_n5ll0"]
 [ext_resource type="AudioStream" uid="uid://18es14h2hi4g" path="res://Sounds/background_at_start.mp3" id="16_panls"]
+[ext_resource type="Texture2D" uid="uid://c0pcgy2rrlukf" path="res://Images/button3.png" id="16_r8j8g"]
 [ext_resource type="Texture2D" uid="uid://de1ns82iffrrf" path="res://Images/file.png" id="18_4voye"]
 [ext_resource type="Texture2D" uid="uid://c72xicxiwdu7x" path="res://Images/scary.png" id="19_jt61n"]
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Sounds/scream.mp3" id="20_lo6q1"]
@@ -90,7 +91,18 @@ default_font_size = 40
 [sub_resource type="Theme" id="Theme_1knth"]
 default_base_scale = 2.0
 default_font = ExtResource("5_d1qnp")
-default_font_size = 35
+default_font_size = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7oqp"]
+texture = ExtResource("16_r8j8g")
+modulate_color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8vdw"]
+texture = ExtResource("16_r8j8g")
+modulate_color = Color(0.625597, 0.625597, 0.625597, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32gm3"]
+texture = ExtResource("16_r8j8g")
 
 [sub_resource type="Theme" id="Theme_3pmot"]
 default_font = ExtResource("5_d1qnp")
@@ -542,134 +554,188 @@ offset_bottom = 0.0690002
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button2" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.194
-anchor_top = 0.724
+anchor_top = 0.74
 anchor_right = 0.283
-anchor_bottom = 0.897
-offset_left = -0.171982
-offset_top = 0.0840149
-offset_right = 0.146011
-offset_bottom = -0.0229797
+anchor_bottom = 0.913
+offset_left = -0.127991
+offset_top = 0.0400085
+offset_right = 0.190002
+offset_bottom = -0.0670471
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button3" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.751
-anchor_top = 0.46
-anchor_right = 0.84
-anchor_bottom = 0.632
-offset_left = -0.237915
-offset_top = -0.139984
-offset_right = 0.0800781
-offset_bottom = 0.112015
+anchor_left = 0.746
+anchor_top = 0.477
+anchor_right = 0.835
+anchor_bottom = 0.65
+offset_left = -0.151978
+offset_top = 0.141998
+offset_right = 0.166077
+offset_bottom = 0.0350037
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button4" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.672
-anchor_top = 0.184
-anchor_right = 0.762
-anchor_bottom = 0.357
-offset_left = 0.0640564
-offset_top = -0.0559921
-offset_right = -0.355896
-offset_bottom = -0.162994
+anchor_left = 0.711
+anchor_top = 0.215
+anchor_right = 0.8
+anchor_bottom = 0.387
+offset_left = -0.231964
+offset_top = -0.109985
+offset_right = 0.0860596
+offset_bottom = 0.137009
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button5" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.352
-anchor_top = 0.618
-anchor_right = 0.442
-anchor_bottom = 0.791
-offset_left = 0.22403
-offset_top = 0.138
-offset_right = -0.195984
-offset_bottom = 0.0310059
+anchor_left = 0.369
+anchor_top = 0.568
+anchor_right = 0.459
+anchor_bottom = 0.74
+offset_left = 0.272003
+offset_top = -0.071991
+offset_right = -0.121979
+offset_bottom = 0.175018
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button6" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.535
-anchor_top = 0.552
-anchor_right = 0.625
-anchor_bottom = 0.724
-offset_left = 0.170044
-offset_top = -0.167999
-offset_right = -0.249939
-offset_bottom = 0.0840149
+anchor_left = 0.556
+anchor_top = 0.689
+anchor_right = 0.646
+anchor_bottom = 0.862
+offset_left = 0.127991
+offset_top = 0.0940094
+offset_right = -0.265991
+offset_bottom = -0.0130005
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button7" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.495
-anchor_top = 0.075
-anchor_right = 0.584
-anchor_bottom = 0.248
-offset_left = -0.309967
-offset_top = 0.0750084
-offset_right = 0.00802612
-offset_bottom = -0.0319901
+anchor_left = 0.504
+anchor_top = 0.215
+anchor_right = 0.594
+anchor_bottom = 0.387
+offset_left = 0.152039
+offset_top = -0.109985
+offset_right = -0.242004
+offset_bottom = 0.137009
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button8" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.138
-anchor_top = 0.451
-anchor_right = 0.228
-anchor_bottom = 0.624
-offset_left = 0.156006
-offset_top = 0.0910034
-offset_right = -0.263977
-offset_bottom = -0.0159912
+anchor_left = 0.152
+anchor_top = 0.444
+anchor_right = 0.241
+anchor_bottom = 0.616
+offset_left = -0.223999
+offset_top = -0.175995
+offset_right = 0.0940094
+offset_bottom = 0.0709839
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Button9" type="Button" parent="Background/MainScene/Quest4"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.316
-anchor_top = 0.228
-anchor_right = 0.405
-anchor_bottom = 0.401
-offset_left = -0.207977
-offset_top = 0.14801
-offset_right = 0.110016
-offset_bottom = 0.0410004
+anchor_left = 0.312
+anchor_top = 0.229
+anchor_right = 0.401
+anchor_bottom = 0.402
+offset_left = -0.143982
+offset_top = -0.0659943
+offset_right = 0.174011
+offset_bottom = -0.172989
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8vdw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c7oqp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_32gm3")
 text = "OK"
 
 [node name="Whispers" type="AudioStreamPlayer" parent="Background"]
@@ -802,6 +868,7 @@ offset_right = 0.343994
 offset_bottom = 0.104004
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
