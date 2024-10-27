@@ -74,11 +74,7 @@ func get_wallpaper_path(output: String) -> String:
 # Maksymalna i minimalna wartość głośności, tutaj ustawiona od 0 do 1 (czyli od 0% do 100%)
 @export var max_volume: float = 1.0
 @export var min_volume: float = 0.0
-
-# Krok głośności, który zwiększa/zmniejsza się za każdym naciśnięciem przycisku
 @export var volume_step: float = 0.1
-
-# Aktualna głośność
 var current_volume: float = 0.5
 
 # Metoda zwiększająca głośność
@@ -87,6 +83,7 @@ func on_vol_up_pressed() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zwiększona: ", current_volume)
 	_on_button_pressed()
+	update_volume_bar()
 
 # Metoda zmniejszająca głośność
 func on_vol_down_pressed() -> void:
@@ -94,6 +91,19 @@ func on_vol_down_pressed() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(current_volume))
 	print("Głośność zmniejszona: ", current_volume)
 	_on_button_pressed()
+	update_volume_bar()
+	
+func update_volume_bar() -> void:
+	var total_bars = 10  # Ustalona liczba symboli na pasku
+	var filled_count = int((current_volume / max_volume) * total_bars)  # Liczba wypełnionych symboli `|`
+	var empty_count = total_bars - filled_count  # Liczba pustych symboli `-`
+	var filled_part = ""
+	for i in range(filled_count):
+		filled_part += "|"
+	var empty_part = ""
+	for i in range(empty_count):
+		empty_part += "-"
+	$"../VolumeBar".text = filled_part + empty_part
 
 
 func _on_credits_toggled(toggled_on: bool) -> void:

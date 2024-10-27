@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=42 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -43,6 +43,10 @@ default_font_size = 40
 default_base_scale = 2.0
 default_font = ExtResource("5_d1qnp")
 default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_pf0nn"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 50
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmv3r"]
 
@@ -132,6 +136,7 @@ visible = false
 z_index = 4
 layout_mode = 2
 size_flags_vertical = 4
+mouse_filter = 1
 theme = SubResource("Theme_6lw6g")
 bbcode_enabled = true
 text = "[center]Rafał \"Bafau\" Bazan
@@ -526,8 +531,22 @@ offset_top = 0.303955
 offset_right = 0.343994
 offset_bottom = 0.104004
 
+[node name="VolumeBar" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11
+anchor_top = 0.54
+anchor_right = 0.544
+anchor_bottom = 0.617
+offset_left = 0.279991
+offset_top = 0.0799866
+offset_right = 0.311951
+offset_bottom = 0.18396
+mouse_filter = 1
+theme = SubResource("Theme_pf0nn")
+text = "|||||-----"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -806,9 +825,15 @@ volume_db = -25.0
 pitch_scale = 0.7
 
 [node name="Event Director" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchor_left = 0.025
+anchor_top = 0.043
+anchor_right = 0.025
+anchor_bottom = 0.043
+offset_left = -19.8
+offset_top = -19.864
+offset_right = 20.2
+offset_bottom = 20.136
 script = ExtResource("13_kr52a")
 
 [node name="SpinTimer" type="Timer" parent="Event Director"]
