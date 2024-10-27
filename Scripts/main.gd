@@ -9,6 +9,8 @@ func _ready():
 	_on_q_start_pressed()
 
 func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index ==MOUSE_BUTTON_LEFT:
+		$Clicker.play()
 	# Check if the event is a KeyEvent (keyboard event)
 	if event is InputEventKey:
 		if event.pressed:

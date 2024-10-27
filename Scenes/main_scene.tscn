@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=55 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -30,22 +30,27 @@
 [ext_resource type="Script" path="res://Scripts/background_sound.gd" id="21_m6fvp"]
 [ext_resource type="Script" path="res://Scripts/althandler.gd" id="24_1au4v"]
 [ext_resource type="PackedScene" uid="uid://dd5geq3s0wtu2" path="res://Scenes/Speech bubble.tscn" id="29_8rvon"]
+[ext_resource type="AudioStream" uid="uid://d2flgu1p35cy2" path="res://Sounds/click.mp3" id="31_ihnbr"]
 
 [sub_resource type="Theme" id="Theme_eprad"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 20
+default_font_size = 22
 
 [sub_resource type="Theme" id="Theme_5n7fj"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 20
 
+[sub_resource type="Theme" id="Theme_cs7bm"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 22
+
 [sub_resource type="Theme" id="Theme_g3b0l"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 20
+default_font_size = 22
 
 [sub_resource type="Theme" id="Theme_0ylyu"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 20
+default_font_size = 22
 
 [sub_resource type="Theme" id="Theme_pf0nn"]
 default_font = ExtResource("5_d1qnp")
@@ -193,6 +198,7 @@ alignment = 2
 
 [node name="Label" type="Label" parent="Background/MainScene/Control/Credits/Azghal"]
 layout_mode = 2
+theme = SubResource("Theme_cs7bm")
 text = "Mateusz \"Azghal\" 
 Olszewski"
 
@@ -1110,6 +1116,12 @@ theme = SubResource("Theme_lcgcb")
 text = "Prosimy nie regulowac odbiorników i nie alt-tabować"
 autowrap_mode = 2
 script = ExtResource("24_1au4v")
+
+[node name="Clicker" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_ihnbr")
+volume_db = -20.0
+pitch_scale = 0.71
+max_polyphony = 7
 
 [connection signal="mouse_entered" from="Background/MainScene/Q1" to="." method="_on_q_1_mouse_entered"]
 [connection signal="mouse_exited" from="Background/MainScene/Q1" to="." method="_on_q_1_mouse_exited"]
