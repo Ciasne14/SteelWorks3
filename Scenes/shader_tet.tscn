@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8e4c5fkl14nf"]
+
+[ext_resource type="Texture2D" uid="uid://qvpqih0b1vkp" path="res://OldComputer.png" id="1_xc6xc"]
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="2_g5cxw"]
+[ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="3_n654k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="MainScene" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022
+anchor_top = 0.026
+anchor_right = 0.773
+anchor_bottom = 0.688
+offset_left = -0.344002
+offset_top = 0.152
+offset_right = 0.503906
+offset_bottom = 0.175995
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xc6xc")
+expand_mode = 1
+script = ExtResource("2_g5cxw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("3_n654k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
