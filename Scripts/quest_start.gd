@@ -9,6 +9,12 @@ var numErrors = 0
 func _ready() -> void:
 	name()
 	pass # Replace with function body.
+	
+func _input(event):
+	# Check if the event is a key press and if it’s the Enter key
+	if event is InputEventKey and event.pressed:
+		if event.keycode == Key.KEY_ENTER:
+			_on_button_pressed()
 
 
 func name()->void:
