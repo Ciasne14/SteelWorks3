@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=52 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -48,7 +48,7 @@ default_font_size = 20
 
 [sub_resource type="Theme" id="Theme_pf0nn"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 50
+default_font_size = 40
 
 [sub_resource type="Theme" id="Theme_glton"]
 default_base_scale = 1.0
@@ -68,10 +68,6 @@ default_font_size = 35
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evpux"]
 
 [sub_resource type="Theme" id="Theme_4n6yd"]
-
-[sub_resource type="Theme" id="Theme_pf0nn"]
-default_font = ExtResource("5_d1qnp")
-default_font_size = 50
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmv3r"]
 
@@ -240,14 +236,14 @@ anchor_left = 0.028
 anchor_top = 0.091
 anchor_right = 0.961
 anchor_bottom = 0.951
-offset_left = -0.048008
-offset_top = 266.695
-offset_right = -168.076
-offset_bottom = 11.395
+offset_left = 162.952
+offset_top = -7.305
+offset_right = -5.07599
+offset_bottom = -262.605
 mouse_filter = 1
 theme = SubResource("Theme_pf0nn")
 text = "|||||-----"
-vertical_alignment = 2
+horizontal_alignment = 2
 
 [node name="Quest2" type="TextureRect" parent="Background"]
 visible = false
@@ -261,7 +257,7 @@ anchor_bottom = 0.63
 offset_left = -0.248009
 offset_top = -0.248009
 offset_right = 0.471924
-offset_bottom = -0.23999
+offset_bottom = -0.239929
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_1u7kc")
@@ -294,7 +290,7 @@ anchor_bottom = 0.63
 offset_left = -0.248001
 offset_top = -0.248005
 offset_right = 0.471924
-offset_bottom = -0.240021
+offset_bottom = -0.23999
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_3l3p7")
@@ -361,7 +357,7 @@ anchor_bottom = 0.63
 offset_left = -0.248001
 offset_top = -0.248005
 offset_right = 0.471924
-offset_bottom = -0.240021
+offset_bottom = -0.23999
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -1145,6 +1141,6 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
-[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
 [connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]
