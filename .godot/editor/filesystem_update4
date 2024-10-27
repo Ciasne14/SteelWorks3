@@ -1,5 +1,2 @@
 res://Scenes/main_scene.tscn
 res://MaterialShaders/vhsshader.gdshader
-res://Scripts/main_scene.gd
-res://quest_start.gd
-res://Scripts/main.gd
