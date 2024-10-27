@@ -122,20 +122,14 @@ func _on_button_pressed() -> void:
 
 
 func _on_play_pressed() -> void:
+	
+	$"../QuestStart".visible = true
+	
 	$"../../Event Director".start_random_event()
 	$"../../Play".disabled = true
 	$"../../AudioStreamPlayer".play()
 	$"../../Stop".disabled=true
-	use_copied_wallpaper(get_current_wallpaper())
-	print(get_current_wallpaper())
-	$"../../Q1".modulate = Color(255,255,255)
-	$"../../Q2".modulate = Color(255,255,255)
-	$"../../Q3".modulate = Color(255,255,255)
-	$"../../Q4".modulate = Color(255,255,255)
-	$"../../Q1".visible = true
-	$"../../Q2".visible = true
-	$"../../Q3".visible = true
-	$"../../Q4".visible = true
+
 	
 	
 var sound_library = [
@@ -150,3 +144,15 @@ func play_whisper():
 	var random_index = randi() % sound_library.size()
 	$"../Whispers".stream = sound_library[random_index]  # Ustaw dźwięk
 	$"../Whispers".play()  # Odtwórz dźwięk
+
+func play_game():
+	use_copied_wallpaper(get_current_wallpaper())
+	print(get_current_wallpaper())
+	$"../../Q1".modulate = Color(255,255,255)
+	$"../../Q2".modulate = Color(255,255,255)
+	$"../../Q3".modulate = Color(255,255,255)
+	$"../../Q4".modulate = Color(255,255,255)
+	$"../../Q1".visible = true
+	$"../../Q2".visible = true
+	$"../../Q3".visible = true
+	$"../../Q4".visible = true

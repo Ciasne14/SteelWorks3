@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=44 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/demon_communicator.gd" id="8_kk6e8"]
 [ext_resource type="Script" path="res://Scripts/quest_3.gd" id="8_r3kv3"]
 [ext_resource type="Script" path="res://Scripts/quest_4.gd" id="9_r8gnw"]
+[ext_resource type="Script" path="res://quest_start.gd" id="10_48578"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://Sounds/click[0-0-2](1).mp3" id="10_xufgv"]
 [ext_resource type="Script" path="res://Scripts/event_director.gd" id="13_kr52a"]
 [ext_resource type="Script" path="res://Scripts/stop.gd" id="14_4rpgv"]
@@ -47,6 +48,9 @@ default_font_size = 35
 [sub_resource type="Theme" id="Theme_pf0nn"]
 default_font = ExtResource("5_d1qnp")
 default_font_size = 50
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evpux"]
+
+[sub_resource type="Theme" id="Theme_4n6yd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmv3r"]
 
@@ -409,6 +413,94 @@ offset_bottom = 0.0410004
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1knth")
+text = "OK"
+
+[node name="QuestStart" type="TextureRect" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.035
+anchor_right = 0.737
+anchor_bottom = 0.662
+offset_left = 0.439999
+offset_top = 0.32
+offset_right = -0.0240479
+offset_bottom = 0.0239563
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_48578")
+
+[node name="LabelText" type="Label" parent="Background/QuestStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.064
+anchor_right = 0.692
+anchor_bottom = 0.565
+offset_left = -139.036
+offset_top = -6.984
+offset_right = 197.712
+offset_bottom = -6.39
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_glton")
+text = "Podaj swój login do komputera
+PS: jest taki sam na jakim pracujesz"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelText3" type="Label" parent="Background/QuestStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274
+anchor_top = 0.064
+anchor_right = 0.692
+anchor_bottom = 0.565
+offset_left = -158.036
+offset_top = 127.016
+offset_right = 178.712
+offset_bottom = 52.61
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_glton")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextEdit2" type="TextEdit" parent="Background/QuestStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.638
+anchor_right = 0.71
+anchor_bottom = 0.786
+offset_left = 0.0720215
+offset_top = -0.0419922
+offset_right = 0.0200806
+offset_bottom = -0.173981
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7h0h5")
+theme_override_colors/background_color = Color(0.882353, 0.882353, 0.882353, 0.764706)
+theme_override_constants/outline_size = 10
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_evpux")
+
+[node name="Button" type="Button" parent="Background/QuestStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.412
+anchor_top = 0.813
+anchor_right = 0.556
+anchor_bottom = 0.939
+offset_left = -3.36801
+offset_top = -6.078
+offset_right = -3.64001
+offset_bottom = -6.31201
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4n6yd")
 text = "OK"
 
 [node name="Whispers" type="AudioStreamPlayer" parent="Background"]
@@ -921,6 +1013,7 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Background/Quest4/Button7" to="Background/Quest4" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Background/Quest4/Button8" to="Background/Quest4" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Background/Quest4/Button9" to="Background/Quest4" method="_on_button_9_pressed"]
+[connection signal="pressed" from="Background/QuestStart/Button" to="Background/QuestStart" method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Button" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Button3" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Button9" to="Background/MainScene" method="_on_button_pressed"]

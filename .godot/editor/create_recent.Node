@@ -2,6 +2,8 @@ HBoxContainer
 VBoxContainer
 Label
 TextureProgressBar
+TextureRect
+Control
 Sprite2D
 CollisionShape2D
 CharacterBody2D
