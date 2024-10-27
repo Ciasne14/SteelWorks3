@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=57 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -31,6 +31,8 @@
 [ext_resource type="Script" path="res://Scripts/althandler.gd" id="24_1au4v"]
 [ext_resource type="PackedScene" uid="uid://dd5geq3s0wtu2" path="res://Scenes/Speech bubble.tscn" id="29_8rvon"]
 [ext_resource type="Texture2D" uid="uid://b0jgkwbjlppus" path="res://Images/pixel-speech-bubble(2).png" id="30_t5mqm"]
+[ext_resource type="Script" path="res://Scenes/info.gd" id="31_63fql"]
+[ext_resource type="Script" path="res://Scenes/label.gd" id="31_v21oc"]
 
 [sub_resource type="Theme" id="Theme_eprad"]
 default_font = ExtResource("5_d1qnp")
@@ -98,7 +100,7 @@ default_font_size = 16
 
 [sub_resource type="Theme" id="Theme_3doyi"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 13
+default_font_size = 20
 
 [sub_resource type="Theme" id="Theme_rbmuq"]
 default_font = ExtResource("5_d1qnp")
@@ -911,7 +913,6 @@ offset_right = -0.248047
 offset_bottom = 0.143982
 grow_horizontal = 2
 grow_vertical = 2
-disabled = true
 texture_normal = ExtResource("5_oexas")
 texture_pressed = ExtResource("6_ak2rn")
 texture_hover = ExtResource("7_75aa8")
@@ -1112,6 +1113,8 @@ theme = SubResource("Theme_3doyi")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Witaj świecie!"
 autowrap_mode = 3
+clip_text = true
+script = ExtResource("31_v21oc")
 
 [node name="Info" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -1131,6 +1134,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
+script = ExtResource("31_63fql")
 
 [node name="althandler" type="Button" parent="."]
 visible = false
