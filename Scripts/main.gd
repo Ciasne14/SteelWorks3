@@ -66,7 +66,7 @@ func _on_q_2_pressed() -> void:
 	$Background/MainScene/Q3.visible=false
 	$Background/MainScene/Q4.visible=false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	$CanvasLayer2/Info.text = "Nacisnij granatowe pole"
+	$CanvasLayer2/Info.text = "Mam twój kursor! Jak teraz wciśniesz granatowe pole?"
 	$Background/MainScene/Quest2.visible = true
 
 func disable_enable_buttons(disableOrEnable):
@@ -115,7 +115,7 @@ func handle_solved():
 		$"Event Director/EventTimer".stop()
 		
 func _on_q_start_pressed() -> void:
-	$CanvasLayer2/Info.text = "Wpisz nazwe uzytkownika: "
+	$CanvasLayer2/Info.text = "Wpisz swoje imię: "
 	$Background/MainScene/Q1.visible=false
 	$Background/MainScene/Q2.visible=false
 	$Background/MainScene/Q3.visible=false

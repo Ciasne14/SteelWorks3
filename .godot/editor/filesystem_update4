@@ -2,3 +2,4 @@ res://Scenes/main_scene.tscn
 res://MaterialShaders/vhsshader.gdshader
 res://Scripts/quest_start.gd
 res://Scenes/intro.tscn
+res://Scripts/main.gd

@@ -34,7 +34,7 @@ func _on_button_pressed() -> void:
 		self.visible = false
 		end_quest()
 	else:
-		$LabelText.text = "Wcale nie"
+		$LabelText.text = "Wcale nie."
 		numErrors +=1
 		if(numErrors == 2):
 			$LabelText.text = "Widzę jak się naprawdę nazywasz. Zaczyna się na " + username[0]
