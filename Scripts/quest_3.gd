@@ -37,10 +37,9 @@ func proceed():
 			$"../../Button".disabled = false
 			$"../../Button2".disabled = false
 			$"../../Button3".disabled = false
-			$"../Q3".modulate = Color(0,1,0)
-			
+			$"../Q3"
 			$"../Q3".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
-			
+			$"../Q3".modulate = Color(0,1,0)
 			$"../Q3".mouse_filter = Control.MOUSE_FILTER_IGNORE
 			$"../../../CanvasLayer2/Info".text = ""
 			var main_node = get_node("../../..") 
