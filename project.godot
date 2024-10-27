@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="SteelWorks3"
+config/name="Out of bounds"
 run/main_scene="res://Scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://Images/ciasne14.png"
