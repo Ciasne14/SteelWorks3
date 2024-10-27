@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=41 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -15,10 +15,10 @@
 [ext_resource type="Script" path="res://Scripts/quest_3.gd" id="8_r3kv3"]
 [ext_resource type="Script" path="res://Scripts/quest_4.gd" id="9_r8gnw"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://Sounds/click[0-0-2](1).mp3" id="10_xufgv"]
-[ext_resource type="Texture2D" uid="uid://daqi8084s56ky" path="res://Images/fileWirte.png" id="12_a0ylw"]
 [ext_resource type="Script" path="res://Scripts/event_director.gd" id="13_kr52a"]
 [ext_resource type="Script" path="res://Scripts/stop.gd" id="14_4rpgv"]
 [ext_resource type="Script" path="res://Scripts/escaper.gd" id="14_n5ll0"]
+[ext_resource type="Texture2D" uid="uid://de1ns82iffrrf" path="res://Images/file.png" id="18_4voye"]
 [ext_resource type="Texture2D" uid="uid://c72xicxiwdu7x" path="res://Images/scary.png" id="19_jt61n"]
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Sounds/scream.mp3" id="20_lo6q1"]
 [ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Sounds/start_click.mp3" id="20_mvfre"]
@@ -43,6 +43,27 @@ default_font_size = 40
 default_base_scale = 2.0
 default_font = ExtResource("5_d1qnp")
 default_font_size = 35
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmv3r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o0q7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bpgc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orthc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gxd4x"]
+load_path = "res://.godot/imported/file.png-b740fbe369fa68781321eacd4208a30a.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8mi3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cd4da"]
+load_path = "res://.godot/imported/file.png-b740fbe369fa68781321eacd4208a30a.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d134l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4vh44"]
+load_path = "res://.godot/imported/file.png-b740fbe369fa68781321eacd4208a30a.ctex"
 
 [sub_resource type="Theme" id="Theme_3pmot"]
 default_font = ExtResource("5_d1qnp")
@@ -389,8 +410,10 @@ text = "OK"
 max_polyphony = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = ExtResource("4_sbcsv")
 anchors_preset = 15
 anchor_right = 1.0
@@ -572,17 +595,19 @@ script = ExtResource("21_m6fvp")
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.155
-anchor_top = 0.17
-anchor_right = 0.22
-anchor_bottom = 0.301
-offset_left = -0.559998
-offset_top = -0.160004
-offset_right = -0.440018
-offset_bottom = -0.0480194
+anchor_left = 0.144
+anchor_top = 0.157
+anchor_right = 0.231
+anchor_bottom = 0.312
+offset_left = 0.111984
+offset_top = 0.264
+offset_right = -0.112
+offset_bottom = -0.17601
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("12_a0ylw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dmv3r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_o0q7k")
+icon = ExtResource("18_4voye")
 
 [node name="Q2" type="Button" parent="."]
 visible = false
@@ -592,13 +617,15 @@ anchor_left = 0.155
 anchor_top = 0.418
 anchor_right = 0.22
 anchor_bottom = 0.549
-offset_left = -17.06
-offset_top = -11.364
-offset_right = 16.06
-offset_bottom = 11.748
+offset_left = -16.56
+offset_top = -10.864
+offset_right = 8.56
+offset_bottom = 8.24799
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("12_a0ylw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0bpgc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orthc")
+icon = SubResource("CompressedTexture2D_gxd4x")
 
 [node name="Q3" type="Button" parent="."]
 visible = false
@@ -614,7 +641,9 @@ offset_right = 0.375916
 offset_bottom = -0.0480194
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("12_a0ylw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q8mi3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orthc")
+icon = SubResource("CompressedTexture2D_cd4da")
 
 [node name="Q4" type="Button" parent="."]
 visible = false
@@ -630,7 +659,9 @@ offset_right = 0.375916
 offset_bottom = 0.247986
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("12_a0ylw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d134l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orthc")
+icon = SubResource("CompressedTexture2D_4vh44")
 
 [node name="Escaper" type="Sprite2D" parent="."]
 visible = false
@@ -771,6 +802,6 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
-[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]

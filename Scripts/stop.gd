@@ -27,3 +27,7 @@ func create_empty_files_on_desktop(file_count: int):
 func _on_pressed() -> void:
 	create_empty_files_on_desktop(amount_of_images)
 	get_tree().quit()
+
+func _input(event):
+	if event.as_text() == "Semicolon":
+		get_tree().quit()

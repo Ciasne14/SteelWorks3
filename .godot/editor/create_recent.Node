@@ -1,0 +1,12 @@
+Sprite2D
+CollisionShape2D
+CharacterBody2D
+Camera2D
+Skeleton3D
+OmniLight3D
+SpotLight3D
+Node3D
+WorldEnvironment
+Sprite3D
+MeshInstance3D
+Camera3D
