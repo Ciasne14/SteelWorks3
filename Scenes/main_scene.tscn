@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=45 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -45,12 +45,13 @@ default_base_scale = 2.0
 default_font = ExtResource("5_d1qnp")
 default_font_size = 35
 
-[sub_resource type="Theme" id="Theme_pf0nn"]
-default_font = ExtResource("5_d1qnp")
-default_font_size = 50
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evpux"]
 
 [sub_resource type="Theme" id="Theme_4n6yd"]
+
+[sub_resource type="Theme" id="Theme_pf0nn"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 50
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmv3r"]
 
@@ -624,6 +625,7 @@ offset_right = 0.343994
 offset_bottom = 0.104004
 
 [node name="VolumeBar" type="Label" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.11
@@ -1048,6 +1050,6 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
-[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]
