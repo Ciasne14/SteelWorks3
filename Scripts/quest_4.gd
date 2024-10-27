@@ -12,7 +12,7 @@ func set_random_values():
 	for button in buttons:
 		var random_number = randi() % 100 + 1
 		button.disabled = false #
-		button.size = Vector2(int(randf_range(10, 100)), int(randf_range(10, 100)))
+		button.size = Vector2(int(randf_range(20, 100)), int(randf_range(20, 100)))
 		button.text = str(random_number)
 		if(random_number > max_val):
 			max_val = random_number

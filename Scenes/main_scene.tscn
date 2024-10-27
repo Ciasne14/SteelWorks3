@@ -868,7 +868,6 @@ offset_right = 0.343994
 offset_bottom = 0.104004
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
