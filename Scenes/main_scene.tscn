@@ -930,6 +930,6 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
-[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
 [connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]
