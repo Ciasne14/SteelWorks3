@@ -58,23 +58,23 @@ func clicked():
 	
 func _on_button_pressed() -> void:
 	if(!chase):
-		$"../Q1".disabled = false
-		$"../Q3".disabled = false
-		$"../Q2".disabled = false
-		$"../Q4".disabled = false
-		$"../Q1".visible = true
-		$"../Q3".visible = true
-		$"../Q2".visible = true
-		$"../Q4".visible = true
+		$"../Background/MainScene/Q1".disabled = false
+		$"../Background/MainScene/Q3".disabled = false
+		$"../Background/MainScene/Q2".disabled = false
+		$"../Background/MainScene/Q4".disabled = false
+		$"../Background/MainScene/Q1".visible = true
+		$"../Background/MainScene/Q3".visible = true
+		$"../Background/MainScene/Q2".visible = true
+		$"../Background/MainScene/Q4".visible = true
 		$"../Button".disabled = false
 		$"../Button2".disabled = false
 		$"../Button3".disabled = false
 		$".".visible = false
-		$"../Q1".modulate = Color(0,1,0)
+		$"../Background/MainScene/Q1".modulate = Color(0,1,0)
 		
-		$"../Q1".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
+		$"../Background/MainScene/Q1".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
 		
-		$"../Q1".mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$"../Background/MainScene/Q1".mouse_filter = Control.MOUSE_FILTER_IGNORE
 		$"../CanvasLayer2/Info".text = ""
 		var main_node = get_node("..") 
 		main_node.handle_solved()
