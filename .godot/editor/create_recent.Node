@@ -1,6 +1,12 @@
+Control
+Container
+CenterContainer
+Label
 HBoxContainer
 VBoxContainer
-Label
+CanvasLayer
+TextureRect
+CanvasModulate
 TextureProgressBar
 TextureRect
 Control
@@ -9,9 +15,3 @@ CollisionShape2D
 CharacterBody2D
 Camera2D
 Skeleton3D
-OmniLight3D
-SpotLight3D
-Node3D
-WorldEnvironment
-Sprite3D
-MeshInstance3D

@@ -103,16 +103,16 @@ func update_volume_bar() -> void:
 	var empty_part = ""
 	for i in range(empty_count):
 		empty_part += "-"
-	$"../VolumeBar".text = filled_part + empty_part
+	$Control/VolumeBar.text = filled_part + empty_part
 
 
 func _on_credits_toggled(toggled_on: bool) -> void:
 	pass
 	if toggled_on:
-		$CenterContainer/Credits.show()
+		$Control/Credits.show()
 		_on_button_pressed()
 	else:
-		$CenterContainer/Credits.hide()
+		$Control/Credits.hide()
 		_on_button_pressed()
 
 

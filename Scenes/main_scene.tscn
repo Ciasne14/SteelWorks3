@@ -1,18 +1,22 @@
-[gd_scene load_steps=45 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=49 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
 [ext_resource type="Texture2D" uid="uid://c8u0u8gxitlm1" path="res://Images/Backgound.png" id="3_3l3p7"]
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="3_fj4oy"]
 [ext_resource type="Material" uid="uid://gu6wpty15hva" path="res://MaterialShaders/VHSShaderMaterial.tres" id="4_sbcsv"]
+[ext_resource type="Texture2D" uid="uid://ct8w10l67y637" path="res://Images/creditsMusics.png" id="5_3kycr"]
 [ext_resource type="FontFile" uid="uid://c1qr4g6bsxx1q" path="res://MaterialShaders/PressStart2P-Regular.ttf" id="5_d1qnp"]
 [ext_resource type="Texture2D" uid="uid://drt8jlsrokyee" path="res://Images/button.png" id="5_oexas"]
 [ext_resource type="Texture2D" uid="uid://xlpti0rpqwl" path="res://Images/nosignal.png" id="6_1u7kc"]
 [ext_resource type="Texture2D" uid="uid://d2lyoodc00bvc" path="res://Images/buttonpressed.png" id="6_ak2rn"]
+[ext_resource type="Texture2D" uid="uid://ce7qe6vrnn8l7" path="res://Images/creditsGodot.png" id="6_d6u8p"]
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://Images/buttonhovered.png" id="7_75aa8"]
 [ext_resource type="Script" path="res://Scripts/quest_2.gd" id="7_axq51"]
+[ext_resource type="Texture2D" uid="uid://ctwdtrwlgrbxv" path="res://Images/creditsPrograming.png" id="8_ake0u"]
 [ext_resource type="Script" path="res://Scripts/demon_communicator.gd" id="8_kk6e8"]
 [ext_resource type="Script" path="res://Scripts/quest_3.gd" id="8_r3kv3"]
+[ext_resource type="Texture2D" uid="uid://d2hs4ixrjgbhs" path="res://Images/creditsGraphics.png" id="9_idast"]
 [ext_resource type="Script" path="res://Scripts/quest_4.gd" id="9_r8gnw"]
 [ext_resource type="Script" path="res://quest_start.gd" id="10_48578"]
 [ext_resource type="AudioStream" uid="uid://c84g8apyvcndw" path="res://Sounds/click[0-0-2](1).mp3" id="10_xufgv"]
@@ -26,9 +30,25 @@
 [ext_resource type="Script" path="res://Scripts/background_sound.gd" id="21_m6fvp"]
 [ext_resource type="Script" path="res://Scripts/althandler.gd" id="24_1au4v"]
 
-[sub_resource type="Theme" id="Theme_6lw6g"]
+[sub_resource type="Theme" id="Theme_eprad"]
 default_font = ExtResource("5_d1qnp")
-default_font_size = 28
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_5n7fj"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_g3b0l"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_0ylyu"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_pf0nn"]
+default_font = ExtResource("5_d1qnp")
+default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_glton"]
 default_base_scale = 1.0
@@ -123,36 +143,111 @@ texture = ExtResource("3_3l3p7")
 expand_mode = 1
 script = ExtResource("3_fj4oy")
 
-[node name="CenterContainer" type="CenterContainer" parent="Background/MainScene"]
+[node name="Control" type="Control" parent="Background/MainScene"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.003
-anchor_right = 1.003
-anchor_bottom = 0.994
-offset_left = -0.214
-offset_top = -4.0
-offset_right = -0.213867
-offset_bottom = 0.154022
+anchor_left = 0.027
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.074
+offset_top = 2.0
+offset_right = 0.00012207
+offset_bottom = -1.99997
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Credits" type="RichTextLabel" parent="Background/MainScene/CenterContainer"]
+[node name="Credits" type="VBoxContainer" parent="Background/MainScene/Control"]
 visible = false
-z_index = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.087
+anchor_right = 0.954
+anchor_bottom = 0.924
+offset_left = -0.208002
+offset_top = 0.114998
+offset_right = -0.0640259
+offset_bottom = -0.0200195
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Bafau" type="HBoxContainer" parent="Background/MainScene/Control/Credits"]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Background/MainScene/Control/Credits/Bafau"]
+layout_mode = 2
+texture = ExtResource("5_3kycr")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Background/MainScene/Control/Credits/Bafau"]
+layout_mode = 2
+theme = SubResource("Theme_eprad")
+text = "Rafał \"Bafau\" 
+Bazan"
+
+[node name="Azghal" type="HBoxContainer" parent="Background/MainScene/Control/Credits"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_5n7fj")
+alignment = 2
+
+[node name="Label" type="Label" parent="Background/MainScene/Control/Credits/Azghal"]
+layout_mode = 2
+text = "Mateusz \"Azghal\" 
+Olszewski"
+
+[node name="TextureRect" type="TextureRect" parent="Background/MainScene/Control/Credits/Azghal"]
+layout_mode = 2
+texture = ExtResource("6_d6u8p")
+expand_mode = 3
+
+[node name="Godwin91ek" type="HBoxContainer" parent="Background/MainScene/Control/Credits"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Background/MainScene/Control/Credits/Godwin91ek"]
+layout_mode = 2
+texture = ExtResource("8_ake0u")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Background/MainScene/Control/Credits/Godwin91ek"]
+layout_mode = 2
+theme = SubResource("Theme_g3b0l")
+text = "Paweł \"godwin91ek\" 
+Tokarczyk"
+
+[node name="Gamequad" type="HBoxContainer" parent="Background/MainScene/Control/Credits"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="Background/MainScene/Control/Credits/Gamequad"]
+layout_mode = 2
+theme = SubResource("Theme_0ylyu")
+text = "Mateusz \"Gamequad\" 
+Woźniak"
+
+[node name="TextureRect" type="TextureRect" parent="Background/MainScene/Control/Credits/Gamequad"]
+layout_mode = 2
+texture = ExtResource("9_idast")
+expand_mode = 3
+
+[node name="VolumeBar" type="Label" parent="Background/MainScene/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.091
+anchor_right = 0.961
+anchor_bottom = 0.951
+offset_left = -0.048008
+offset_top = 266.695
+offset_right = -168.076
+offset_bottom = 11.395
 mouse_filter = 1
-theme = SubResource("Theme_6lw6g")
-bbcode_enabled = true
-text = "[center]Rafał \"Bafau\" Bazan
-
-Mateusz \"Azghal\" Olszewski
-
-Paweł \"godwin91ek\" Tokarczyk
-
-Mateusz \"Gamequad\" Woźniak"
-fit_content = true
-autowrap_mode = 0
+theme = SubResource("Theme_pf0nn")
+text = "|||||-----"
+vertical_alignment = 2
 
 [node name="Quest2" type="TextureRect" parent="Background"]
 visible = false
