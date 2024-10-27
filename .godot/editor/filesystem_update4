@@ -1,5 +1,8 @@
 res://Scenes/main_scene.tscn
 res://MaterialShaders/vhsshader.gdshader
-res://Scripts/demon_communicator.gd
+res://Scripts/quest_2.gd
 res://Scenes/intro.tscn
-res://Scripts/main_scene.gd
+res://Scripts/escaper.gd
+res://Scripts/quest_3.gd
+res://Scripts/quest_4.gd
+res://Scripts/speech_bubble.gd

@@ -88,7 +88,6 @@ default_font_size = 40
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evpux"]
 
 [sub_resource type="Theme" id="Theme_4n6yd"]
-default_font_size = 35
 
 [sub_resource type="Theme" id="Theme_1knth"]
 default_base_scale = 2.0
@@ -404,14 +403,14 @@ theme_override_styles/read_only = SubResource("StyleBoxEmpty_evpux")
 [node name="Button" type="Button" parent="Background/MainScene/QuestStart"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.679
-anchor_top = 1.459
-anchor_right = 0.936
-anchor_bottom = 1.686
-offset_left = 0.0360413
-offset_top = 0.0212097
-offset_right = 0.0614624
-offset_bottom = -0.00772095
+anchor_left = 0.719
+anchor_top = 1.495
+anchor_right = 0.863
+anchor_bottom = 1.633
+offset_left = 0.18396
+offset_top = -0.0715027
+offset_right = -0.0880432
+offset_bottom = -0.0930481
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_4n6yd")
