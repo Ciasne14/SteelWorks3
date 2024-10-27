@@ -25,26 +25,25 @@ func proceed():
 	var correct_answer = current_question[1].to_lower()
 	if(answer == correct_answer):
 		if(current_count == 2):
-			$"../MainScene".visible=true
 			$".".visible=false
-			$"../MainScene/Q1".disabled = false
-			$"../MainScene/Q3".disabled = false
-			$"../MainScene/Q2".disabled = false
-			$"../MainScene/Q4".disabled = false
-			$"../MainScene/Q1".visible = true
-			$"../MainScene/Q2".visible = true
-			$"../MainScene/Q3".visible = true
-			$"../MainScene/Q4".visible = true
+			$"../Q1".disabled = false
+			$"../Q3".disabled = false
+			$"../Q2".disabled = false
+			$"../Q4".disabled = false
+			$"../Q1".visible = true
+			$"../Q2".visible = true
+			$"../Q3".visible = true
+			$"../Q4".visible = true
 			$"../../Button".disabled = false
 			$"../../Button2".disabled = false
 			$"../../Button3".disabled = false
-			$"../MainScene/Q3".modulate = Color(0,1,0)
+			$"../Q3".modulate = Color(0,1,0)
 			
-			$"../MainScene/Q3".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
+			$"../Q3".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
 			
-			$"../MainScene/Q3".mouse_filter = Control.MOUSE_FILTER_IGNORE
-			$"../../CanvasLayer2/Info".text = ""
-			var main_node = get_node("../..") 
+			$"../Q3".mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$"../../../CanvasLayer2/Info".text = ""
+			var main_node = get_node("../../..") 
 			main_node.handle_solved()
 		current_count = current_count + 1
 	if(current_count <3):

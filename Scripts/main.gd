@@ -89,7 +89,7 @@ func _on_q_3_pressed() -> void:
 	$Background/MainScene/Q2.visible=false
 	$Background/MainScene/Q3.visible=false
 	$Background/MainScene/Q4.visible=false
-	$Background/Quest3.visible = true
+	$Background/MainScene/Quest3.visible = true
 
 # Function to create and display a popup
 func _create_popup():
@@ -104,7 +104,7 @@ func _on_q_4_pressed() -> void:
 	$Background/MainScene/Q2.visible=false
 	$Background/MainScene/Q3.visible=false
 	$Background/MainScene/Q4.visible=false
-	$Background/Quest4.visible = true
+	$Background/MainScene/Quest4.visible = true
 
 func handle_solved():
 	solved = solved +  1

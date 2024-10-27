@@ -58,26 +58,25 @@ func check_for_value(button_val):
 	else:
 		set_random_values()
 	if are_all_buttons_disabled():
-		$"../MainScene".visible=true
 		$".".visible=false
-		$"../MainScene/Q1".disabled = false
-		$"../MainScene/Q3".disabled = false
-		$"../MainScene/Q2".disabled = false
-		$"../MainScene/Q4".disabled = false
-		$"../MainScene/Q1".visible = true
-		$"../MainScene/Q2".visible = true
-		$"../MainScene/Q3".visible = true
-		$"../MainScene/Q4".visible = true
+		$"../Q1".disabled = false
+		$"../Q3".disabled = false
+		$"../Q2".disabled = false
+		$"../Q4".disabled = false
+		$"../Q1".visible = true
+		$"../Q2".visible = true
+		$"../Q3".visible = true
+		$"../Q4".visible = true
 		$"../../Button".disabled = false
 		$"../../Button2".disabled = false
 		$"../../Button3".disabled = false
-		$"../MainScene/Q4".modulate = Color(0,1,0)
+		$"../Q4".modulate = Color(0,1,0)
 		
-		$"../MainScene/Q4".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
+		$"../Q4".icon.load("res://.godot/imported/fileWirte.png-7a131dc8f8081ad60e6f3f4da5f89cd8.ctex")
 		
-		$"../MainScene/Q4".mouse_filter = Control.MOUSE_FILTER_IGNORE
-		$"../../CanvasLayer2/Info".text = ""
-		var main_node = get_node("../..") 
+		$"../Q4".mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$"../../../CanvasLayer2/Info".text = ""
+		var main_node = get_node("../../..") 
 		main_node.handle_solved()
 		
 func are_all_buttons_disabled() -> bool:
