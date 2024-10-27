@@ -1,4 +1,9 @@
+res://Scenes/main_scene.tscn
 res://MaterialShaders/vhsshader.gdshader
 res://Scenes/Speech bubble.tscn
+res://Scenes/popup_message.tscn
+res://Scenes/popup_test.tscn
+res://Scripts/main_scene.gd
 res://Scenes/speech_bubble.gd
-res://Scenes/main_scene.tscn
+res://Scripts/stop.gd
+res://quest_start.gd

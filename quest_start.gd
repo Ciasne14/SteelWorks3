@@ -30,7 +30,7 @@ func _on_button_pressed() -> void:
 	var answer = $TextEdit2.text.strip_edges().to_lower()
 	var correct_answer = username.to_lower()
 	if(answer == correct_answer):
-		print("Dobrze")
+		$"../../../CanvasLayer2/Info".text = "Poddaj się próbom i aktywuj STOP"
 		self.visible = false
 		end_quest()
 	else:
