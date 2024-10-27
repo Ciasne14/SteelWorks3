@@ -6,6 +6,7 @@ var solved = 0
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
+	_on_q_start_pressed()
 
 func _input(event):
 	# Check if the event is a KeyEvent (keyboard event)
@@ -114,5 +115,10 @@ func handle_solved():
 		$Stop.disabled=false
 		$"Event Director/EventTimer".stop()
 		
-		
+func _on_q_start_pressed() -> void:
+	$CanvasLayer2/Info.text = "Wpisz nazwe uzytkownika: "
+	$Q1.visible=false
+	$Q2.visible=false
+	$Q3.visible=false
+	$Q4.visible=false
 	
