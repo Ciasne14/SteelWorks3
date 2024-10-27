@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=53 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Sounds/scream.mp3" id="20_lo6q1"]
 [ext_resource type="Script" path="res://Scripts/background_sound.gd" id="21_m6fvp"]
 [ext_resource type="Script" path="res://Scripts/althandler.gd" id="24_1au4v"]
+[ext_resource type="PackedScene" uid="uid://dd5geq3s0wtu2" path="res://Scenes/Speech bubble.tscn" id="29_8rvon"]
 
 [sub_resource type="Theme" id="Theme_eprad"]
 default_font = ExtResource("5_d1qnp")
@@ -1035,14 +1036,14 @@ light_mask = 2
 visibility_layer = 2
 z_index = 4
 anchors_preset = -1
-anchor_left = 0.787
-anchor_top = 0.356
-anchor_right = 0.948
-anchor_bottom = 0.594
-offset_left = 0.375916
-offset_top = 0.311996
-offset_right = -0.0960693
-offset_bottom = 0.0879822
+anchor_left = 0.627
+anchor_top = 0.355
+anchor_right = 0.945
+anchor_bottom = 0.593
+offset_left = -0.304016
+offset_top = -0.0400085
+offset_right = 0.359985
+offset_bottom = -0.264038
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_3pmot")
@@ -1057,6 +1058,22 @@ unique_name_in_owner = true
 [node name="ApiTimer" type="Timer" parent="CanvasLayer2/DemonCommunicator"]
 unique_name_in_owner = true
 autostart = true
+
+[node name="SpeechBubble" parent="CanvasLayer2/DemonCommunicator" instance=ExtResource("29_8rvon")]
+z_index = 3
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.483
+anchor_top = 0.039
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 666.261
+offset_top = -5.006
+offset_right = -86.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Info" type="Label" parent="CanvasLayer2"]
 anchors_preset = -1

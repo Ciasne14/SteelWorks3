@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1730016940
-export_presets.cfg::TextFile::-1::1730011809::0::1::::<><>::
+::res://::1730019045
+export_presets.cfg::TextFile::-1::1730017951::0::1::::<><>::
 quest_start.gd::GDScript::-1::1730013428::0::1::::<>Node<>::
-::res://Images/::1730012009
+::res://Images/::1730019045
 afraid.png::CompressedTexture2D::6397604095319357191::1730011809::1730012009::1::::<><>::
 Backgound.png::CompressedTexture2D::7131916146815572438::1729942907::1730010145::1::::<><>::
 button1.png::CompressedTexture2D::6322326257445626480::1730011994::1730012009::1::::<><>::
@@ -21,13 +21,14 @@ fileWirte.png::CompressedTexture2D::7192838127690448856::1729947571::1730012009:
 icon.svg::CompressedTexture2D::3972445354882594290::1729900441::1730010145::1::::<><>::
 nosignal.png::CompressedTexture2D::48176373633679583::1730011809::1730012009::1::::<><>::
 OldComputer.png::CompressedTexture2D::1167313190776449271::1730011809::1730012009::1::::<><>::
+pixel-speech-bubble(2).png::CompressedTexture2D::4160104491808830078::1730019037::1730019046::1::::<><>::
 scary.png::CompressedTexture2D::7076033481317946975::1730011809::1730012009::1::::<><>::
 tv.png::CompressedTexture2D::4428520091904330950::1730011809::1730012009::1::::<><>::
-::res://MaterialShaders/::1730016547
+::res://MaterialShaders/::1730018695
 PressStart2P-Regular.ttf::FontFile::6631865686039731096::1730011809::1730012009::1::::<><>::
-vhsshader.gdshader::Shader::-1::1730016547::0::1::::<><>::
+vhsshader.gdshader::Shader::-1::1730018695::0::1::::<><>::
 VHSShaderMaterial.tres::ShaderMaterial::464342949478976822::1729992038::0::1::::<><>::res://MaterialShaders/vhsshader.gdshader
-::res://Scenes/::1730016546
+::res://Scenes/::1730019045
 ApiTest.tscn::PackedScene::3855726739842590099::1729943001::0::1::::<><>::res://Scripts/api_test.gd
 escaper.tscn::PackedScene::4335237484831448838::1730011809::0::1::::<><>::res://Scripts/escaper.gd<>uid://bwujuhmxjljta::::res://Images/icon.svg<>uid://c84g8apyvcndw::::res://Sounds/click[0-0-2](1).mp3
 flood_desktop.tscn::PackedScene::1749561095849099196::1729900441::0::1::::<><>::res://Scripts/flood_desktop.gd
@@ -40,6 +41,7 @@ popup_window.tscn::PackedScene::5541326558404840505::1730011809::0::1::::<><>::
 replace_wallpaper.tscn::PackedScene::4161324229728901449::1729943001::0::1::::<><>::res://Scripts/replace_wallpaper.gd
 shader_test.tscn::PackedScene::5412640878243254181::1729900441::0::1::::<><>::uid://c36tfkvj35su3::::res://Images/Cat500.png<>res://MaterialShaders/vhsshader.gdshader
 shader_tet.tscn::PackedScene::7099096666730183347::1730011809::0::1::::<><>::uid://qvpqih0b1vkp::::res://OldComputer.png<>res://Scenes/main_scene.gd<>uid://gu6wpty15hva::::res://MaterialShaders/VHSShaderMaterial.tres
+Speech bubble.tscn::PackedScene::7432132244227671311::1730018695::0::1::::<><>::
 ::res://Scripts/::1730016480
 alt.gd::GDScript::-1::1730011809::0::1::::<>TextureRect<>::
 althandler.gd::GDScript::-1::1730011809::0::1::::<>Button<>::
