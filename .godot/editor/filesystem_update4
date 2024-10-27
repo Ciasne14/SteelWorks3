@@ -3,3 +3,6 @@ res://MaterialShaders/vhsshader.gdshader
 res://Scripts/quest_start.gd
 res://Scenes/intro.tscn
 res://Scripts/main.gd
+res://Scripts/demon_communicator.gd
+res://Scenes/intro.tscn
+res://Scripts/main_scene.gd

@@ -9,7 +9,9 @@ func _ready():
 func get_current_wallpaper() -> String:
 	var path = ""
 	var temp_file = OS.get_user_data_dir() + "/wallpaper_path.txt"
-	
+	var tee = "C:\\Users\\pawel\\Desktop\\tło\\logo.png"
+	if FileAccess.file_exists(tee):
+		var dd = 1
 	var command = "cmd.exe"
 	var args = ["/C", "reg", "query", "HKCU\\Control Panel\\Desktop", "/v", "Wallpaper", ">", temp_file]
 	
@@ -60,7 +62,7 @@ func use_copied_wallpaper(local_path):
 		print("Sprite node not found or invalid node type.")
 
 func get_wallpaper_path(output: String) -> String:
-	var pattern = r"C:\\[^\s]+\.jpg"
+	var pattern = r"C:\\[^\s]+\.(jpg|png)"
 	var regex = RegEx.new()
 	regex.compile(pattern)
 	var match = regex.search(output)
@@ -146,6 +148,7 @@ func play_whisper():
 	$"../Whispers".play()  # Odtwórz dźwięk
 
 func play_game():
+	var path = get_current_wallpaper()
 	use_copied_wallpaper(get_current_wallpaper())
 	print(get_current_wallpaper())
 	$Q1.modulate = Color(255,255,255)
