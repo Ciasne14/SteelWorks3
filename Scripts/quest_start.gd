@@ -41,9 +41,11 @@ func _on_button_pressed() -> void:
 		end_quest()
 	else:
 		$LabelText.text = "Wcale nie."
+		$TextEdit2.clear()
 		numErrors +=1
 		if(numErrors == 2):
 			$LabelText.text = "Widzę jak się naprawdę nazywasz. Zaczyna się na " + username[0]
+			$TextEdit2.clear()
 		elif(numErrors >= 3):
 			$LabelText.text = "Skończ już grać w te gierki!"
 			$TextEdit2.text = username
