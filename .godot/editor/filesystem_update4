@@ -5,3 +5,4 @@ res://Scripts/quest_4.gd
 res://Scenes/intro.tscn
 res://Scenes/info.gd
 res://Scenes/label.gd
+res://Scripts/demon_communicator.gd

@@ -1,6 +1,6 @@
 extends Label
 
-func _ready():
+func _ready()->void:
 	var tween = get_tree().create_tween()
 	tween.set_loops(-1)  # -1 for infinite loop
 	# First tween: modulate to red
