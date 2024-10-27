@@ -43,5 +43,5 @@ func _on_button_pressed() -> void:
 	pass
 
 func end_quest():
-	$"../MainScene".play_game()
+	$"..".play_game()
 	pass

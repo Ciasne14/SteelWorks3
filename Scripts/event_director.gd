@@ -42,11 +42,11 @@ func volume_up():
 func start_random_rotation():
 	# Losowanie prędkości obrotu (prędkość może być dodatnia lub ujemna)
 	$"../Background/MainScene".pivot_offset = $"../Background/MainScene".size/2
-	rotation_speed = randf_range(-0.1, 0.1)
+	rotation_speed = randf_range(-0.05, 0.05)
 	is_rotating = true  # Włączenie obrotu
 
 	# Losowy czas obrotu
-	var rotation_duration = randf_range(2.0, 5.0)
+	var rotation_duration = randf_range(1.0, 4.0)
 	$SpinTimer.start(rotation_duration)  # Ustawienie timera na losowy czas
 
 # Funkcja `_process` odpowiedzialna za aktualizację obrotu w każdej klatce

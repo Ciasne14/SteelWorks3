@@ -123,7 +123,7 @@ func _on_button_pressed() -> void:
 
 func _on_play_pressed() -> void:
 	
-	$"../QuestStart".visible = true
+	$QuestStart.visible = true
 	
 	$"../../Event Director".start_random_event()
 	$"../../Play".disabled = true

@@ -6,3 +6,5 @@ res://Scripts/escaper.gd
 res://Scripts/quest_2.gd
 res://Scripts/quest_3.gd
 res://Scripts/quest_4.gd
+res://quest_start.gd
+res://Scripts/event_director.gd

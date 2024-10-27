@@ -67,8 +67,7 @@ func _on_q_2_pressed() -> void:
 	$Background/MainScene/Q4.visible=false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	$CanvasLayer2/Info.text = "Nacisnij granatowe pole"
-	$Background/MainScene.visible = false
-	$Background/Quest2.visible = true
+	$Background/MainScene/Quest2.visible = true
 
 func disable_enable_buttons(disableOrEnable):
 	buttons_are_enabled = disableOrEnable
