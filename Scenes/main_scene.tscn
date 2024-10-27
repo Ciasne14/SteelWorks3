@@ -19,9 +19,9 @@
 [ext_resource type="Script" path="res://Scripts/event_director.gd" id="13_kr52a"]
 [ext_resource type="Script" path="res://Scripts/stop.gd" id="14_4rpgv"]
 [ext_resource type="Script" path="res://Scripts/escaper.gd" id="14_n5ll0"]
+[ext_resource type="AudioStream" uid="uid://18es14h2hi4g" path="res://Sounds/background_at_start.mp3" id="16_panls"]
 [ext_resource type="Texture2D" uid="uid://c72xicxiwdu7x" path="res://Images/scary.png" id="19_jt61n"]
 [ext_resource type="AudioStream" uid="uid://c7ee60n534abk" path="res://Sounds/scream.mp3" id="20_lo6q1"]
-[ext_resource type="AudioStream" uid="uid://sk7xel3cb4gp" path="res://Sounds/start_click.mp3" id="20_mvfre"]
 [ext_resource type="Script" path="res://Scripts/background_sound.gd" id="21_m6fvp"]
 [ext_resource type="Script" path="res://Scripts/althandler.gd" id="24_1au4v"]
 
@@ -388,7 +388,125 @@ text = "OK"
 [node name="Whispers" type="AudioStreamPlayer" parent="Background"]
 max_polyphony = 5
 
+[node name="Button" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.927
+anchor_right = 0.562
+anchor_bottom = 0.952
+offset_left = -0.127991
+offset_top = 0.303955
+offset_right = -0.424072
+offset_bottom = 0.104004
+
+[node name="Button3" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.839
+anchor_top = 0.769
+anchor_right = 0.872
+anchor_bottom = 0.801
+offset_left = -0.528076
+offset_top = -0.312042
+offset_right = 0.455933
+offset_bottom = -0.0480347
+
+[node name="Button9" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.826
+anchor_top = 0.636
+anchor_right = 0.903
+anchor_bottom = 0.657
+offset_left = 0.447937
+offset_top = -0.128021
+offset_right = -0.256104
+offset_bottom = 0.264008
+
+[node name="Button2" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.439
+anchor_top = 0.927
+anchor_right = 0.489
+anchor_bottom = 0.952
+offset_left = 0.271973
+offset_top = 0.303955
+offset_right = -0.328003
+offset_bottom = 0.104004
+
+[node name="Button4" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.302
+anchor_top = 0.927
+anchor_right = 0.421
+anchor_bottom = 0.952
+offset_left = 0.0959778
+offset_top = 0.303955
+offset_right = 0.00796509
+offset_bottom = 0.104004
+
+[node name="Button5" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.248
+anchor_top = 0.927
+anchor_right = 0.291
+anchor_bottom = 0.952
+offset_left = 0.303986
+offset_top = 0.303955
+offset_right = -0.231995
+offset_bottom = 0.104004
+
+[node name="Button6" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.186
+anchor_top = 0.927
+anchor_right = 0.235
+anchor_bottom = 0.952
+offset_left = -0.272003
+offset_top = 0.303955
+offset_right = 0.279968
+offset_bottom = 0.104004
+
+[node name="Button7" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.115
+anchor_top = 0.927
+anchor_right = 0.158
+anchor_bottom = 0.952
+offset_left = 0.520004
+offset_top = 0.303955
+offset_right = -0.0160065
+offset_bottom = 0.104004
+
+[node name="Button8" type="Button" parent="Background"]
+visibility_layer = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.927
+anchor_right = 0.103
+anchor_bottom = 0.952
+offset_left = -0.472004
+offset_top = 0.303955
+offset_right = 0.343994
+offset_bottom = 0.104004
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("4_sbcsv")
@@ -563,7 +681,7 @@ stream = ExtResource("10_xufgv")
 volume_db = -15.0
 
 [node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_mvfre")
+stream = ExtResource("16_panls")
 volume_db = -10.0
 autoplay = true
 script = ExtResource("21_m6fvp")
@@ -654,6 +772,8 @@ wait_time = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Escaper"]
 stream = ExtResource("20_lo6q1")
+volume_db = -25.0
+pitch_scale = 0.7
 
 [node name="Event Director" type="Control" parent="."]
 anchors_preset = 0
@@ -746,6 +866,15 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Background/Quest4/Button7" to="Background/Quest4" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Background/Quest4/Button8" to="Background/Quest4" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Background/Quest4/Button9" to="Background/Quest4" method="_on_button_9_pressed"]
+[connection signal="pressed" from="Background/Button" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button3" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button9" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button2" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button4" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button5" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button6" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button7" to="Background/MainScene" method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Button8" to="Background/MainScene" method="_on_button_pressed"]
 [connection signal="pressed" from="Play" to="Background/MainScene" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="CanvasLayer2/DemonCommunicator" method="_on_play_pressed"]
 [connection signal="pressed" from="VolDown" to="Background/MainScene" method="on_vol_down_pressed"]
@@ -771,6 +900,6 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
-[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]
