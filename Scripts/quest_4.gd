@@ -7,6 +7,10 @@ func _ready():
 	buttons = [$Button, $Button2, $Button3, $Button4, $Button5, $Button6, $Button7, $Button8, $Button9]
 	set_random_values()
 
+func _process(delta: float) -> void:
+	if $".".visible:
+		$"..".rotation = 0
+
 func set_random_values():
 	max_val=0
 	for button in buttons:
