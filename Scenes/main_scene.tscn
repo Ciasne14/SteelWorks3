@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bomcccbex7omi"]
+[gd_scene load_steps=55 format=3 uid="uid://bomcccbex7omi"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_d111u"]
 [ext_resource type="Texture2D" uid="uid://b4dhcxhbjudfa" path="res://Images/tv.png" id="1_ya67x"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://dcdpbu8xi78ug" path="res://Images/buttonhovered.png" id="7_75aa8"]
 [ext_resource type="Script" path="res://Scripts/quest_2.gd" id="7_axq51"]
 [ext_resource type="Texture2D" uid="uid://ctwdtrwlgrbxv" path="res://Images/creditsPrograming.png" id="8_ake0u"]
-[ext_resource type="Script" path="res://Scripts/demon_communicator.gd" id="8_kk6e8"]
 [ext_resource type="Script" path="res://Scripts/quest_3.gd" id="8_r3kv3"]
 [ext_resource type="Texture2D" uid="uid://d2hs4ixrjgbhs" path="res://Images/creditsGraphics.png" id="9_idast"]
 [ext_resource type="Script" path="res://Scripts/quest_4.gd" id="9_r8gnw"]
@@ -32,7 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://dd5geq3s0wtu2" path="res://Scenes/Speech bubble.tscn" id="29_8rvon"]
 [ext_resource type="Texture2D" uid="uid://b0jgkwbjlppus" path="res://Images/pixel-speech-bubble(2).png" id="30_t5mqm"]
 [ext_resource type="Script" path="res://Scenes/info.gd" id="31_63fql"]
-[ext_resource type="Script" path="res://Scenes/label.gd" id="31_v21oc"]
 
 [sub_resource type="Theme" id="Theme_eprad"]
 default_font = ExtResource("5_d1qnp")
@@ -1054,7 +1052,6 @@ offset_bottom = -0.264038
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_3pmot")
-script = ExtResource("8_kk6e8")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer2/DemonCommunicator"]
 unique_name_in_owner = true
@@ -1082,6 +1079,7 @@ offset_right = 0.160019
 offset_bottom = -0.00999451
 grow_horizontal = 2
 grow_vertical = 2
+script = null
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer2/DemonCommunicator"]
 visible = false
@@ -1114,7 +1112,6 @@ theme = SubResource("Theme_3doyi")
 text = "Witaj świecie!"
 autowrap_mode = 3
 clip_text = true
-script = ExtResource("31_v21oc")
 
 [node name="Info" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -1201,6 +1198,6 @@ script = ExtResource("24_1au4v")
 [connection signal="pressed" from="Escaper/Button" to="Escaper" method="_on_button_pressed"]
 [connection signal="timeout" from="Escaper/Timer" to="Escaper" method="_on_timer_timeout"]
 [connection signal="timeout" from="Event Director/SpinTimer" to="Event Director" method="_on_SpinTimer_timeout"]
-[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_EventTimer_timeout"]
+[connection signal="timeout" from="Event Director/EventTimer" to="Event Director" method="_on_event_timer_timeout"]
 [connection signal="pressed" from="althandler" to="althandler" method="_on_pressed"]

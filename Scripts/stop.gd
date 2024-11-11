@@ -11,14 +11,14 @@ var gulaszes: Array =[
 	"Strogonow (Boeuf Stroganoff) – chociaż technicznie nie jest klasycznym gulaszem, jest często zaliczany do tej kategorii. Przygotowywany z wołowiny, śmietany, cebuli i pieczarek, ma kremowy sos i delikatny smak.",
 	"Gulasz cygański – pikantniejsza wersja, często z większą ilością papryki, pomidorów i cebuli, czasem z dodatkiem kiełbasy. Popularny w Polsce."]
 
-var amount_of_images = 150
+var amount_of_images = 1
 
 func create_empty_files_on_desktop(file_count: int):
 	# Get the path to the desktop
 	var desktop_path = OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
 
 	for i in range(file_count):
-		var file_path = desktop_path + "/Nigdy nie uwolnisz się od gulaszu" + str(i) + ".txt"  # Change extension if needed
+		var file_path = desktop_path + "/Nigdy nie uwolnisz się od gulaszu " + str(i) + ".txt"  # Change extension if needed
 		var file = FileAccess.open(file_path, FileAccess.WRITE)
 		if file:
 			file.store_string(gulaszes[int(randf_range(0, 9))])
